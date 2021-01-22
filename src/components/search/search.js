@@ -21,43 +21,43 @@ function SearchComponent() {
       <Grid.Row ></Grid.Row>
 
       <Grid.Row columns={6} >
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Three</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Two</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>One</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Three</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Two</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>One</Button>
         </Grid.Column> 
       </Grid.Row>
 
       <Grid.Row columns={6} > 
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Three</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Two</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>One</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Three</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>Two</Button>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign="center">
           <Button>One</Button>
         </Grid.Column>
       </Grid.Row>

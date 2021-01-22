@@ -17,7 +17,7 @@ function HomeGrid() {
             {/* <SidebarComponent /> */}
           </Grid.Column>
 
-          <Grid.Column width={10}>
+          <Grid.Column centered width={10}>
             <SearchComponent/>
             <ListItem />
           </Grid.Column>
