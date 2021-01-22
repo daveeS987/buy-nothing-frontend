@@ -1,20 +1,16 @@
-import { Link } from 'react-router-dom';
 import { Grid, Button, Header, Icon } from 'semantic-ui-react';
 
-import SidebarComponent from '../sidebar.js';
-import ListItem from '../list/ListItems';
-import SearchComponent from '../search/search.js';
 
 function MyFeedGrid() {
   return (
     <>
   
       <Grid>
-      <Header as='h3' icon textAlign='center'>
+        <Header as='h3' icon textAlign='center'>
           <Icon name='users' circular />
           <Header.Content>BuyNothing</Header.Content>
         </Header>
-        <Grid></Grid>
+        {/* <Grid></Grid> */}
         <Grid.Row columns={3}>
           <Grid.Column></Grid.Column>
           <Grid.Column></Grid.Column>

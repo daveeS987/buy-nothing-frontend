@@ -18,22 +18,19 @@ function ListItems (){
 
 return(
     <Grid>
-      <Grid.Row>
-        <Grid.Column width={8}>
+      <Grid.Row columns={1}>
+      {/* <Grid.Column></Grid.Column> */}
+        <Grid.Column textAlign="center" width="12" verticalAlign>
+          <ListCard /> 
+          <ListCard /> 
+          <ListCard /> 
+          <ListCard /> 
+          <ListCard /> 
           <ListCard />     
         </Grid.Column>
-        <Grid.Column width={8}>
-          <ListCard />
-        </Grid.Column>
+      {/* <Grid.Column></Grid.Column> */}
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={8}>
-          <ListCard />
-        </Grid.Column>
-        <Grid.Column width={8}>
-          <ListCard />
-        </Grid.Column>
-      </Grid.Row>
+     
       {/* TODO: THIS SHOULD PROBALBY GO IN A FOOTER? OR IN A DIV? PROBABLY NOT IN THE GRID, RESEARCH */}
       <PaginationExampleShorthand />
     </Grid>
