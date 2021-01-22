@@ -21,29 +21,34 @@ function MyFeedGrid() {
           <Grid.Column></Grid.Column>
         </Grid.Row>
 
-        <Grid.Row columns={5}>
+        <Grid.Row  columns={5}>
+    <Grid.Row></Grid.Row>
         <Grid.Column>
             
           </Grid.Column>
-          <Grid.Column>
-            <Button />
-          </Grid.Column>
-          <Grid.Column>
+         
+          <Grid.Column textAlign="center">
             <Button>
               My Post
             </Button>
           </Grid.Column>
-          <Grid.Column>
+
+          <Grid.Column textAlign="center">
             <Button>
               Posts I'm Following
             </Button>
-            
           </Grid.Column>
-          <Grid.Column>
+
+          <Grid.Column textAlign="center">
           <Button>
               Create a Post
             </Button>
           </Grid.Column>
+
+          <Grid.Column>
+
+          </Grid.Column>
+          
         </Grid.Row>
       </Grid>
     </>
