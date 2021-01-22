@@ -10,22 +10,20 @@ import MyFeedView from '../components/myFeedView/myfeedgrid.js'
 
 function HomePage() {
 
-  // This state is just to toggle between homeview/myFeedView
-  // This is HARDCODED for DEVELOPMENT PURPOSES
   const [view, setView] = useState('home');
 
-  function changeToHomeView() {
-    
+  function changeView(newView) {
+    setView(newView);
   }
 
   return (
     <>
         <HeaderComponent />
-        <SideBarComponent />
+        <SideBarComponent changeView={changeView}/>
 
-        <If condition={view==='feed'}>
+        <If condition={view==='home'}>
           <Then>
-            <HomeView/>
+            <HomeView />
           </Then>
           <Else>
             <MyFeedView />
