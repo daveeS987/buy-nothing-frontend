@@ -6,14 +6,16 @@ import SidebarComponent from '../components/sidebar.js';
 import HeaderComponent from '../components/header.js';
 import ListItem from '../components/list/ListItems';
 import SearchComponent from '../components/search/search.js';
+import Avatar from '../components/avatar/avatar.js'
+import HomeGrid from '../components/grid/homegrid.js'
 
 function HomePage() {
 
   return (
     <>
-
-
-      <Grid>
+        <HeaderComponent />
+        <HomeGrid/>
+      {/* <Grid>
 
         <Grid.Row></Grid.Row>
 
@@ -33,13 +35,13 @@ function HomePage() {
           </Grid.Column>
 
           <Grid.Column width={3}>
-            
+            <Avatar />
           </Grid.Column>
 
         </Grid.Row>
 
 
-      </Grid>
+      </Grid> */}
 
      
      
