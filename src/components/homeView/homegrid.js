@@ -14,7 +14,7 @@ function HomeGrid() {
       <Grid>
 
           <Grid.Column width={3}>
-            <SidebarComponent />
+            {/* <SidebarComponent /> */}
           </Grid.Column>
 
           <Grid.Column width={10}>
