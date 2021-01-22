@@ -15,7 +15,11 @@ function HomePage() {
 
       <Grid>
 
-        <HeaderComponent />
+        <Grid.Row></Grid.Row>
+
+        <Grid.Row>
+          <HeaderComponent />
+        </Grid.Row>
        
         <Grid.Row>
 
