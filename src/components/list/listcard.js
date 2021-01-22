@@ -17,18 +17,12 @@ function ListCard (){
 
         <Grid.Column width="8" >
           <Card.Content>
-            <Card.Header>Daniel</Card.Header>
-            <Card.Meta>Joined in 2016</Card.Meta>
+            <Card.Header>List Item</Card.Header>
+            <Card.Meta>Location</Card.Meta>
             <Card.Description>
-              Daniel is a comedian living in Nashville.
+              Item Description. Item Description. Item Description. Item Description. Item Description. Item Description. Item Description.
             </Card.Description>
-              <ListModal/>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                10 Friends
-              </a>
+            <ListModal/>
             </Card.Content>
         </Grid.Column>
       </Grid.Row>
