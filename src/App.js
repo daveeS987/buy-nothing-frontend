@@ -1,13 +1,20 @@
-import {BrowserRouter as Router,Route,} from "react-router-dom";
-import  ButtonExampleBasic from './components/button.js'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import HomePage from './pages/homepage.js';
 
 function App() {
   return (
-    <div className="App">
-      <h1> Hello, World!</h1>
-      <ButtonExampleBasic/> 
-    </div>
-  );
+
+    <Router>
+      <Switch>
+
+        <Route exact path='/'>
+          <HomePage/>
+        </Route>
+
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
