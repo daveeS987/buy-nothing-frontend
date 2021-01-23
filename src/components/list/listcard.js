@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Grid, Icon, Image} from 'semantic-ui-react'
-import ListModal from './listmodal.js'
+// import ListModal from './listmodal.js'
+import ModalExampleScrollingContent from './listmodal.js'
 
 function ListCard (){
 
@@ -12,17 +13,21 @@ function ListCard (){
       <Grid.Row columns={2}>
         <Grid.Column width="8" >
 
-        <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={true} />
+        <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={true} />
         </Grid.Column>
 
         <Grid.Column width="8" >
-          <Card.Content>
-            <Card.Header>List Item</Card.Header>
-            <Card.Meta>Location</Card.Meta>
-            <Card.Description>
+          <Card.Content style={{
+            textAlign: "left"
+
+            }}>
+            <Card.Meta >Author // Location</Card.Meta>
+            <Card.Header>TITLE OF POST - GRAB FROM CREATED POST IN BACK  END</Card.Header>
+            {/* <Card.Description>
               Item Description. Item Description. Item Description. Item Description. Item Description. Item Description. Item Description.
-            </Card.Description>
-            <ListModal/>
+            </Card.Description> */}
+            {/* <ListModal/> */}
+            <ModalExampleScrollingContent/>
             </Card.Content>
         </Grid.Column>
       </Grid.Row>
