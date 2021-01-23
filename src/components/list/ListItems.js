@@ -19,7 +19,6 @@ function ListItems (){
 return(
     <Grid>
       <Grid.Row columns={1}>
-      {/* <Grid.Column></Grid.Column> */}
         <Grid.Column textAlign="center" width="12" verticalAlign>
           <ListCard /> 
           <ListCard /> 
@@ -28,7 +27,6 @@ return(
           <ListCard /> 
           <ListCard />     
         </Grid.Column>
-      {/* <Grid.Column></Grid.Column> */}
       </Grid.Row>
      
       {/* TODO: THIS SHOULD PROBALBY GO IN A FOOTER? OR IN A DIV? PROBABLY NOT IN THE GRID, RESEARCH */}
