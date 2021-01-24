@@ -13,14 +13,7 @@ const UploadModal = (props) => {
       trigger={<Button>Create New Post</Button>}
       >
 
-      {/* <Modal.Content image>
-        
-        <Modal.Description>
-          
-        </Modal.Description> 
-      </Modal.Content> */}
-       
-
+    
       <Modal.Content image scrolling>
         <Modal.Description >
           <h1> Upload here </h1> 

@@ -5,6 +5,8 @@ import ListItems from '../list/ListItems.js';
 
 import UploadModal from '../uploadPost/uploadModal.js';
 
+import Upload from '../uploadPost/uploadForm.js';
+
 function MyFeedGrid() {
 
   const [view, setView] = useState('myPost');
@@ -38,7 +40,7 @@ function MyFeedGrid() {
           </Grid.Column>
 
           <Grid.Column textAlign="center">
-            <UploadModal />
+            <Upload />
           </Grid.Column>
 
           <Grid.Column ></Grid.Column >
