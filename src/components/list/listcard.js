@@ -5,13 +5,7 @@ import ModalExampleScrollingContent from './listmodal.js'
 
 function ListCard (props){
 
-  console.log('props.item from listcard line 8:', props.item);
-
-  // console.log( 'props.item.title', props.item.title)
-  // console.log( 'props.item.description', props.item.description)
-
   return(
-
 
     <Card fluid centered>
     <Grid>
@@ -32,7 +26,7 @@ function ListCard (props){
             {props.item.description}
             </Card.Description>
             {/* <ListModal/> */}
-            <ModalExampleScrollingContent/>
+            <ModalExampleScrollingContent object={props.item}/>
             </Card.Content>
         </Grid.Column>
       </Grid.Row>
