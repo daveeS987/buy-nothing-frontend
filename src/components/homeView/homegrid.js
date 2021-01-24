@@ -10,15 +10,15 @@ function HomeGrid() {
     <>
       <Grid>
 
-          <Grid.Column width={3}>
+          <Grid.Column width={5}>
           </Grid.Column>
 
-          <Grid.Column centered width={10}>
+          <Grid.Column centered width={6}>
             <SearchComponent/>
             <ListItem />
           </Grid.Column>
 
-          <Grid.Column width={3}>
+          <Grid.Column width={10}>
           </Grid.Column>
 
       </Grid>

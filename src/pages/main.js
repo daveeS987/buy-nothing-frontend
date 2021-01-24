@@ -11,20 +11,23 @@ import MyFeedView from '../components/myFeedView/myfeedgrid.js'
 function HomePage() {
 
   const [view, setView] = useState('home');
-
+  const [welcome, setWelcome] = useState('welcome')
   function changeView(newView) {
     setView(newView);
   }
-
+function changeWelcome(newView){
+  setWelcome(newView)
+}
   return (
     <>
         <HeaderComponent />
-        <SideBarComponent changeView={changeView}/>
+        <SideBarComponent changeView={changeView} changeWelcome={changeWelcome}/>
 
         <If condition={view==='home'}>
           <Then>
             <HomeView />
           </Then>
+          {/* <If condition={welcome='welcome'}> */}
           <Else>
             <MyFeedView />
           </Else>

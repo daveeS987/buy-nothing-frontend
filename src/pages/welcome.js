@@ -8,11 +8,7 @@ function WelcomePage() {
       <h1>Welcome Page</h1>
 
 
-      <ul>
-        <li>
-          <Link to='/homepage'> Home Page</Link>
-        </li>
-      </ul>
+   
     </>
   )
 }
