@@ -3,7 +3,12 @@ import { Card, Grid, Icon, Image} from 'semantic-ui-react'
 // import ListModal from './listmodal.js'
 import ModalExampleScrollingContent from './listmodal.js'
 
-function ListCard (){
+function ListCard (props){
+
+  console.log('props.item from listcard line 8:', props.item);
+
+  // console.log( 'props.item.title', props.item.title)
+  // console.log( 'props.item.description', props.item.description)
 
   return(
 
@@ -13,7 +18,7 @@ function ListCard (){
       <Grid.Row columns={2}>
         <Grid.Column width="8" >
 
-        <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={true} />
+        <Image size='medium' src={props.item.imageUrl} wrapped ui={true} />
         </Grid.Column>
 
         <Grid.Column width="8" >
@@ -21,11 +26,11 @@ function ListCard (){
             textAlign: "left"
 
             }}>
-            <Card.Meta >Author // Location</Card.Meta>
-            <Card.Header>TITLE OF POST - GRAB FROM CREATED POST IN BACK  END</Card.Header>
-            {/* <Card.Description>
-              Item Description. Item Description. Item Description. Item Description. Item Description. Item Description. Item Description.
-            </Card.Description> */}
+            <Card.Header>{props.item.title}</Card.Header>
+            <Card.Meta >{props.item.location}</Card.Meta>
+            <Card.Description>
+            {props.item.description}
+            </Card.Description>
             {/* <ListModal/> */}
             <ModalExampleScrollingContent/>
             </Card.Content>

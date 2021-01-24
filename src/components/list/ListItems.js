@@ -4,11 +4,12 @@ import {useDispatch, useSelector } from 'react-redux';
 import {Grid, Pagination} from 'semantic-ui-react'
 import ListCard from './listcard.js'
 
-import {getListings} from '../../store/listings.js';
 
 function ListItems (){
 
-
+  let listings = useSelector(state => state.listings)
+  console.log('listings:', listings);
+  
 
   const PaginationExampleShorthand = () => (
     <Pagination
@@ -28,7 +29,13 @@ return(
           margin : "auto"
           }}verticalAlign>
 
-          <ListCard /> 
+          {
+            listings.map(item => {
+              return (
+                <ListCard item={item} />
+              )
+            })
+          }
   
         </Grid.Column>
       </Grid.Row>
