@@ -15,9 +15,11 @@ function HomePage() {
   function changeView(newView) {
     setView(newView);
   }
-function changeWelcome(newView){
-  setWelcome(newView)
-}
+
+  function changeWelcome(newView){
+    setWelcome(newView)
+  }
+  
   return (
     <>
         <HeaderComponent />
