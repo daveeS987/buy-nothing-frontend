@@ -23,6 +23,10 @@ export default function SidebarComponent(props) {
           Messages
         </Menu.Item>
 
+        <Menu.Item as='a' onClick={() => props.changeWelcome('welcome')}>
+          <Icon name='comments outline' />
+          Welcome
+        </Menu.Item>
       </Sidebar>
     </>
   )
