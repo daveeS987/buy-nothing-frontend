@@ -19,7 +19,9 @@ function ListItems (){
 return(
     <Grid>
       <Grid.Row columns={1}>
-        <Grid.Column textAlign="center" width="12" verticalAlign>
+        <Grid.Column textAlign="center" width="12" style={{
+     margin : "auto"
+    }}verticalAlign>
           <ListCard /> 
           <ListCard /> 
           <ListCard /> 

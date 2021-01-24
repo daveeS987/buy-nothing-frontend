@@ -52,57 +52,48 @@
 // 
 
 import React from 'react'
-import { Button, Icon, Image, Modal } from 'semantic-ui-react'
+import { Button, Icon, Image, Modal, Grid, Row, Column } from 'semantic-ui-react'
+import CommentExampleComment from './semanticComponents/reply.js';
 
 const ModalExampleScrollingContent = () => {
   const [open, setOpen] = React.useState(false)
 
   return (
+
+       
     <Modal
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      trigger={<Button>Scrolling Content Modal</Button>}
-    >
-      <Modal.Header>Profile Picture</Modal.Header>
-      <Modal.Content image scrolling>
-        <Image size='medium' src='https://react.semantic-ui.com/images/wireframe/image.png' wrapped />
+      trigger={<Button>See Comments...</Button>}
+      >
 
-        <Modal.Description>
+      <Modal.Content image>
+   <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' wrapped  
+   style={{
+     margin : "auto"
+    }}
+  />
+    <Modal.Description>
+      
+    </Modal.Description> 
+   
+  </Modal.Content>
+       
+
+  
+      <Modal.Content image scrolling>
+
+        <Modal.Description >
+          <h1> Title of Post </h1> 
           <p>
-            This is an example of expanded content that will cause the modal's
-            dimmer to scroll.
+            This is the description of the item 
+           
           </p>
 
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image
-            src='https://react.semantic-ui.com/images/wireframe/paragraph.png'
-            style={{ marginBottom: 10 }}
-          />
-          <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+          
+          <CommentExampleComment/>
+          
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
@@ -110,7 +101,9 @@ const ModalExampleScrollingContent = () => {
           Proceed <Icon name='chevron right' />
         </Button>
       </Modal.Actions>
+
     </Modal>
+   
   )
 }
 
