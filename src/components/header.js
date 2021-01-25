@@ -1,6 +1,8 @@
 import { Header, Icon, Grid} from 'semantic-ui-react'
 import Avatar from '../components/avatar/avatar.js'
 
+import Login from '../context/auth/login.js';
+
 export default function HeaderComponent() {
 
   return (
@@ -18,7 +20,7 @@ export default function HeaderComponent() {
 
       <Grid.Column width={3}>
         <Avatar />
-        <div>We can make this ^^^ bad boy sticky when you scroll? DON'T FORGET TO ADD LOGIN BUTTON</div>
+        <Login />
       </Grid.Column>
 
     </Grid>

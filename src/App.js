@@ -1,23 +1,36 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {Provider} from 'react-redux';
 
-import Main from './pages/main.js';
 import store from './store';
+import Auth from './context/auth/auth.js';
+import LoginContext from './context/auth/context.js';
+import Main from './pages/main.js';
+import Signup from './pages/signup/signup.js';
 
 function App() {
   return (
 
-    <Provider store={store}>
-      <Router>
-          <Switch>
+    <LoginContext>
+      <Provider store={store}>
+        <Router>
+            <Switch>
 
-            <Route exact path='/'>
-              <Main/>
-            </Route>
+              <Route exact path='/'>
+                <Auth capability="read">
+                  <h1>Will this show</h1>
+                </Auth>
 
-          </Switch>
-      </Router>
-    </Provider>
+                <Main/>
+              </Route>
+
+              <Route exact path='/signup'>
+                <Signup />
+              </Route>
+
+            </Switch>
+        </Router>
+      </Provider>
+    </LoginContext>
   )
 }
 
