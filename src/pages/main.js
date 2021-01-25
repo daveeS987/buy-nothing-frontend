@@ -38,9 +38,7 @@ function Main() {
             <MyFeedView />
           </Case>
 
-          <Case condition={view==='welcome'}>
-            <MyFeedView />
-          </Case>
+
         </Switch>
 
     </>
