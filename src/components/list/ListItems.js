@@ -8,8 +8,6 @@ import ListCard from './listcard.js'
 function ListItems (){
 
   let listings = useSelector(state => state.listings)
-  console.log('listings:', listings);
-  
 
   const PaginationExampleShorthand = () => (
     <Pagination
@@ -22,7 +20,7 @@ function ListItems (){
     />
   )
 
-return(
+  return(
     <Grid>
       <Grid.Row columns={1}>
         <Grid.Column textAlign="center" width="12" style={{
@@ -44,9 +42,7 @@ return(
       <PaginationExampleShorthand />
     </Grid>
   
-  
-
-);
-    }
+  );
+}
 
 export default ListItems

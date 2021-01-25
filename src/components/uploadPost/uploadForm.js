@@ -1,107 +1,50 @@
-import React, {  useState } from "react";
-import { Modal, Button } from 'semantic-ui-react';
-import axios from "axios";
+import React, { Component } from 'react'
+import { Form } from 'semantic-ui-react'
 
+const options = [
+  { key: 'm', text: 'Male', value: 'male' },
+  { key: 'f', text: 'Female', value: 'female' },
+  { key: 'o', text: 'Other', value: 'other' },
+]
 
-const Upload = () => {
-  const [show, setShow] = useState(false);
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
-  const [error, setError] = useState(false);
+class UploadForm extends Component {
+  state = {}
+  handleChange = (e, { value }) => this.setState({ value })
+  render() {
+    const { value } = this.state
+    return (
+      <Form>
+        <Form.Group widths='equal'>
+          <Form.Input fluid label='First name' placeholder='First name' />
+          <Form.Input fluid label='Last name' placeholder='Last name' />
+        </Form.Group>
+        <Form.Group inline>
+          <label>Size</label>
+          <Form.Radio
+            label='Small'
+            value='sm'
+            checked={value === 'sm'}
+            onChange={this.handleChange}
+          />
+          <Form.Radio
+            label='Medium'
+            value='md'
+            checked={value === 'md'}
+            onChange={this.handleChange}
+          />
+          <Form.Radio
+            label='Large'
+            value='lg'
+            checked={value === 'lg'}
+            onChange={this.handleChange}
+          />
+        </Form.Group>
+        <Form.TextArea label='About' placeholder='Tell us more about you...' />
+        <Form.Checkbox label='I agree to the Terms and Conditions' />
+        <Form.Button>Submit</Form.Button>
+      </Form>
+    )
+  }
+}
 
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const formData = new FormData();
-
-      formData.append("picture", image, image.name);
-      formData.append("desc", description);
-
-      let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v2/imghandler/upload', formData);
-      setError(false);
-      handleClose();
-    } catch (error) {
-      setError(true);
-      console.error(error);
-    }
-  };
-
-  const fileData = () => {
-    if (image)
-      return (
-        <h5>
-          {" "}
-          <em> {image.name} </em>{" "}
-        </h5>
-      );
-
-    return null;
-  };
-
-  return (
-    <>
-
-      <Modal 
-        open={show}  
-        onClose={handleClose}
-        trigger={<Button onClick={handleShow}>Create New Post</Button>}
-        >
-        <Modal.Content >
-          <Modal.Description>Upload Image</Modal.Description>
-        </Modal.Content>
-        <Modal.Content>
-          <form onSubmit={onSubmit}>
-            <div>
-              <label htmlFor="desc">description</label>
-              <input
-                onChange={(e) => setDescription(e.target.value)}
-                type="text"
-                value={description}
-                className="form-control"
-                required
-                id="desc"
-              />
-            </div>
-
-            <div >
-              <div >
-                <input
-                  type="file"
-                  onChange={(e) => setImage(e.target.files[0])}
-                  id="image"
-                />
-
-                <label htmlFor="image">
-                  {image ? fileData() : "Choose File"}
-                </label>
-              </div>
-            </div>
-
-            <button type="submit">
-              Submit
-            </button>
-
-            {error ? (
-              <div >
-                {" "}
-                Some error occured uploading the file{" "}
-              </div>
-            ) : null}
-          </form>
-        </Modal.Content>
-
-        <Modal.Actions>
-          <Button onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Actions>
-      </Modal>
-    </>
-  );
-};
-
-export default Upload;
+export default UploadForm;
