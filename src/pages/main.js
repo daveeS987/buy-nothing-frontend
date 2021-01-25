@@ -1,41 +1,50 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import {useDispatch, useSelector } from 'react-redux';
 import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
 
-
-import HeaderComponent from '../components/header.js';
-import SideBarComponent from '../components/sidebar.js';
+import Header from '../components/header.js';
+import SideBar from '../components/sidebar.js';
 import HomeView from '../components/homeView/homegrid.js'
 import MyFeedView from '../components/myFeedView/myfeedgrid.js'
 
+import {getListings} from '../store/listings.js';
 
-function HomePage() {
+
+function Main() {
 
   const [view, setView] = useState('home');
-  const [welcome, setWelcome] = useState('welcome')
+
   function changeView(newView) {
     setView(newView);
   }
-function changeWelcome(newView){
-  setWelcome(newView)
-}
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getListings())
+  }, [])
+
   return (
     <>
-        <HeaderComponent />
-        <SideBarComponent changeView={changeView} changeWelcome={changeWelcome}/>
+        <Header />
+        <SideBar changeView={changeView}/>
 
-        <If condition={view==='home'}>
-          <Then>
+        <Switch>
+          <Case condition={view==='home'}>
             <HomeView />
-          </Then>
-          {/* <If condition={welcome='welcome'}> */}
-          <Else>
+          </Case>
+
+          <Case condition={view==='myFeed'}>
             <MyFeedView />
-          </Else>
-        </If>
- 
+          </Case>
+
+          <Case condition={view==='welcome'}>
+            <MyFeedView />
+          </Case>
+        </Switch>
+
     </>
   )
 }
 
-
-export default HomePage;
+export default Main;

@@ -1,19 +1,23 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {Provider} from 'react-redux';
 
 import Main from './pages/main.js';
+import store from './store';
 
 function App() {
   return (
 
-    <Router>
-      <Switch>
+    <Provider store={store}>
+      <Router>
+          <Switch>
 
-        <Route exact path='/'>
-          <Main/>
-        </Route>
+            <Route exact path='/'>
+              <Main/>
+            </Route>
 
-      </Switch>
-    </Router>
+          </Switch>
+      </Router>
+    </Provider>
   )
 }
 
