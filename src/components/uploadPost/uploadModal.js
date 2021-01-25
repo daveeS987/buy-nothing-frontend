@@ -3,7 +3,6 @@ import {useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Form, Dropdown } from 'semantic-ui-react';
 import axios from "axios";
 
-import UploadForm from './uploadForm.js';
 
 import {addListing} from '../../store/listings.js';
 
@@ -40,7 +39,7 @@ const Upload = () => {
       formData.append("picture", image, image.name);
       formData.append("desc", description);
 
-      let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v2/imghandler/upload', formData);
+      let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v1/imghandler/upload', formData);
 
       console.log('res.data.createdImage.url:', res.data.createdImage.url)
       setFormItems({...formItems, imageUrl: res.data.createdImage.url})
