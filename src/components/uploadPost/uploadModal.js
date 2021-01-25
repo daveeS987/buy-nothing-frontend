@@ -11,7 +11,7 @@ const Upload = () => {
 
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [description, setDescription] = useState("");
+  // const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
 
@@ -37,7 +37,7 @@ const Upload = () => {
       const formData = new FormData();
 
       formData.append("picture", image, image.name);
-      formData.append("desc", description);
+      // formData.append("desc", description);
 
       let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v1/imghandler/upload', formData);
 
@@ -96,17 +96,6 @@ const Upload = () => {
         </Modal.Content>
         <Modal.Content>
           <form onSubmit={uploadHandler}>
-            <div>
-              <label htmlFor="desc">description</label>
-              <input
-                onChange={(e) => setDescription(e.target.value)}
-                type="text"
-                value={description}
-                className="form-control"
-                required
-                id="desc"
-              />
-            </div>
 
             <div >
               <div >
