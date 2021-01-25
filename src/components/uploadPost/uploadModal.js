@@ -1,27 +1,25 @@
 import React, {  useState, useEffect } from "react";
 import {useDispatch, useSelector } from 'react-redux';
-import { Modal, Button, ModalContent, Form, Dropdown } from 'semantic-ui-react';
+import { Modal, Button, Form, Dropdown } from 'semantic-ui-react';
 import axios from "axios";
 
 import UploadForm from './uploadForm.js';
-import Draft from './draft.js';
 
 import {addListing} from '../../store/listings.js';
 
 
 const Upload = () => {
+
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
 
-  const [newImageUrl, setNewImageUrl] = useState('');
-
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
   const [formItems, setFormItems ] = useState({});
-  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     let newItems = {
@@ -45,8 +43,6 @@ const Upload = () => {
       let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v2/imghandler/upload', formData);
 
       console.log('res.data.createdImage.url:', res.data.createdImage.url)
-      // setNewImageUrl(res.data.createdImage.url)
-      // console.log('newImageUrl:', newImageUrl)
       setFormItems({...formItems, imageUrl: res.data.createdImage.url})
 
       setError(false);
@@ -56,23 +52,6 @@ const Upload = () => {
     }
   };
 
-  /*
-   {
-      "comments": [],
-      "commentors": [],
-      "_id": "600dc01b20cd1d0015adeb6a",
-      "title": "testing123",
-      "description": "testing123",
-      "imageUrl": "https://via.placeholder.com/300x300?text=test+image+1",
-      "creatorUserName": "testing123",
-      "creatorUserId": "testing123",
-      "categories": "testing123",
-      "location": "testing123",
-      "itemStatus": true,
-      "__v": 0
-    },
-
-  */
 
   const submitHandler = async(e) => {
     e.preventDefault();
