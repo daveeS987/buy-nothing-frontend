@@ -1,9 +1,12 @@
 import React, {  useState, useEffect } from "react";
+import {useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, ModalContent, Form, Dropdown } from 'semantic-ui-react';
 import axios from "axios";
 
 import UploadForm from './uploadForm.js';
 import Draft from './draft.js';
+
+import {addListing} from '../../store/listings.js';
 
 
 const Upload = () => {
@@ -18,6 +21,7 @@ const Upload = () => {
   const handleClose = () => setShow(false);
 
   const [formItems, setFormItems ] = useState({});
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     let newItems = {
@@ -84,7 +88,8 @@ const Upload = () => {
 
     console.log('formItems inside submitHandler:', JSON.stringify(ouput));
 
-    
+    dispatch(addListing(ouput));
+    handleClose();
   }
 
   const fileData = () => {
