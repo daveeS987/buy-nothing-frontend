@@ -20,7 +20,7 @@ export const getListings = () => async dispatch => {
   
   let listings = await axios({
     method: 'GET',
-    url: 'https://buynothingbackend.herokuapp.com/api/v2/listings'
+    url: 'https://buynothingbackend.herokuapp.com/api/v1/listings'
   });
 
   dispatch({
@@ -34,7 +34,7 @@ export const addListing = (payload) => async dispatch => {
 
   await axios({
     method: 'POST',
-    url: 'https://buynothingbackend.herokuapp.com/api/v2/listings',
+    url: 'https://buynothingbackend.herokuapp.com/api/v1/listings',
     data: payload
   })
 

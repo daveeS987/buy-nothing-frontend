@@ -1,7 +1,7 @@
 import { Header, Icon, Grid} from 'semantic-ui-react'
 import Avatar from '../components/avatar/avatar.js'
 
-import Login from '../context/auth/login.js';
+// import Login from '../context/auth/login.js';
 
 export default function HeaderComponent() {
 
@@ -20,7 +20,7 @@ export default function HeaderComponent() {
 
       <Grid.Column width={3}>
         <Avatar />
-        <Login />
+        {/* <Login /> */}
       </Grid.Column>
 
     </Grid>

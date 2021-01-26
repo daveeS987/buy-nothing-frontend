@@ -37,8 +37,6 @@ function Main() {
           <Case condition={view==='myFeed'}>
             <MyFeedView />
           </Case>
-
-
         </Switch>
 
     </>
