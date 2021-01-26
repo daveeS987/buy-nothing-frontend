@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react'
 
 import ListItem from '../list/ListItems';
 import SearchComponent from './search.js';
+import Profile from '../../context/authO/profile.js';
 
 
 function HomeGrid() {
@@ -16,6 +17,7 @@ function HomeGrid() {
           </Grid.Column>
 
           <Grid.Column centered width={6}>
+            <Profile/>
             <SearchComponent/>
             <ListItem />
           </Grid.Column>

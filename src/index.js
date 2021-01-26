@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Auth0Provider
+        domain="davee1234.us.auth0.com"
+        clientId="ZH1REh7iBjpJQZAstfxzYBUQpGFEUIDF"
+        redirectUri={'http://localhost:3000'}
+      >
+      <App />
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
