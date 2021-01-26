@@ -9,10 +9,10 @@ const Profile = () => {
   const userContext = useContext(LoginContext);
   
   useEffect(() => {
-    
-    console.log('use effect authzero ran')
+
+
     if(user) {
-      console.log('inside if statement:', user.email)
+      console.log('inside if statement:', user)
       userContext.login(user.email);
     }
   }, [user])

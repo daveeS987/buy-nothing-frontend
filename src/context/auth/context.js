@@ -56,7 +56,7 @@ function LoginProvider(props) {
       // if we're here, the token was good
       setIsLoggedIn(true);
       setUser(tokenUser)
-      console.log('tokenUser', tokenUser);
+      // console.log('tokenUser', tokenUser);
       cookie.save('auth', token);
       console.log('Succesfully logged in');
       // set a cookie so that we can stay logged in
