@@ -17,7 +17,7 @@ function LoginProvider(props) {
 
     try{
       const response = await superagent.post(`${API}/signup`).send(input);
-      login(input);
+      // login(input);
 
     } catch(e) {
       console.warn('Something Bad Happened. Error in Signing Up')
@@ -27,13 +27,17 @@ function LoginProvider(props) {
   const login = async (input) => {
     const API = process.env.REACT_APP_API;
 
-    try {
-      const response = await superagent.post(`${API}/signin`)
-        .auth( input.username, input.password );
+    const LocalHost = 'http://localhost:5000';
 
+    try {
+      // const response = await superagent.post(`${API}/signin`)
+      //   .auth( input.username, input.password );
+      const response = await superagent.post(`${LocalHost}/authZero`).send({email:input})
+
+      console.log('response line 37:', response.body);
       // This is the ID that MONGO gives
       setUserId(response.body.user._id)
-      console.log('userId is now set to use in context:', userId);
+      // console.log('userId is now set to use in context:', userId);
 
       const {token} = response.body;
       validateToken(token);
