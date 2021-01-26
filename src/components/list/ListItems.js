@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react';
+import {useDispatch, useSelector } from 'react-redux';
+
 import {Grid, Pagination} from 'semantic-ui-react'
 import ListCard from './listcard.js'
 
 
 function ListItems (){
+
+  let listings = useSelector(state => state.listings)
 
   const PaginationExampleShorthand = () => (
     <Pagination
@@ -16,31 +20,29 @@ function ListItems (){
     />
   )
 
-return(
+  return(
     <Grid>
-      <Grid.Row>
-        <Grid.Column width={8}>
-          <ListCard />     
-        </Grid.Column>
-        <Grid.Column width={8}>
-          <ListCard />
+      <Grid.Row columns={1}>
+        <Grid.Column textAlign="center" width="12" style={{
+          margin : "auto"
+          }}verticalAlign>
+
+          {
+            listings.map(item => {
+              return (
+                <ListCard item={item} />
+              )
+            })
+          }
+  
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={8}>
-          <ListCard />
-        </Grid.Column>
-        <Grid.Column width={8}>
-          <ListCard />
-        </Grid.Column>
-      </Grid.Row>
+     
       {/* TODO: THIS SHOULD PROBALBY GO IN A FOOTER? OR IN A DIV? PROBABLY NOT IN THE GRID, RESEARCH */}
       <PaginationExampleShorthand />
     </Grid>
   
-  
-
-);
-    }
+  );
+}
 
 export default ListItems
