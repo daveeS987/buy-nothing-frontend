@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Grid, Icon, Image} from 'semantic-ui-react'
-// import ListModal from './listmodal.js'
-import ModalExampleScrollingContent from './listmodal.js'
+import ListModal from './listmodal.js'
 
 function ListCard (props){
 
@@ -25,9 +24,9 @@ function ListCard (props){
             <Card.Description>
             {props.item.description}
             </Card.Description>
-            {/* <ListModal/> */}
-            <ModalExampleScrollingContent object={props.item}/>
-            </Card.Content>
+            
+            <ListModal object={props.item}/>
+          </Card.Content>
         </Grid.Column>
       </Grid.Row>
     </Grid>

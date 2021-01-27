@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Icon, Image, Modal, Grid, Row, Column } from 'semantic-ui-react'
-import CommentExampleComment from './semanticComponents/reply.js';
+import ListingCommentGroup from './semanticComponents/CommentGroup.js';
 
-const ModalExampleScrollingContent = (props) => {
+const ListModal = (props) => {
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -11,7 +11,10 @@ const ModalExampleScrollingContent = (props) => {
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      trigger={<Button>Comments...</Button>}
+
+  
+      trigger={<Button>More Details</Button>}
+
       >
 
       <Modal.Content image>
@@ -20,9 +23,6 @@ const ModalExampleScrollingContent = (props) => {
           margin : "auto"
           }}
         />
-        <Modal.Description>
-          
-        </Modal.Description> 
       </Modal.Content>
        
 
@@ -31,13 +31,15 @@ const ModalExampleScrollingContent = (props) => {
           <h1> {props.object.title} </h1> 
           <p>{props.object.description}</p>
 
-          <CommentExampleComment/>
+          <ListingCommentGroup listing={props.object}/>
+
+
         </Modal.Description>
       </Modal.Content>
 
       <Modal.Actions>
         <Button onClick={() => setOpen(false)} primary>
-          Proceed <Icon name='chevron right' />
+          Close <Icon name='chevron right' />
         </Button>
       </Modal.Actions>
 
@@ -46,4 +48,4 @@ const ModalExampleScrollingContent = (props) => {
   )
 }
 
-export default ModalExampleScrollingContent
+export default ListModal
