@@ -11,11 +11,13 @@ function Avatar(){
 
   const userContext = useContext(LoginContext);
 
+  const thisuser = userContext.user.username || '';
+
   return (
     <>
       <Message
         icon='user circle outline'
-        header={`Welcome back, ${userContext.user.username}`}
+        header={`Welcome Back ${thisuser}!`}
         // content='Current Location: Seattle'
       />
 
