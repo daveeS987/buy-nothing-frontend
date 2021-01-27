@@ -56,7 +56,6 @@ const Upload = () => {
   const submitHandler = async(e) => {
     e.preventDefault();
 
-    console.log('userContext.user:', userContext.user);
     let ouput = {
       ...formItems,
       comments: [],
@@ -65,8 +64,6 @@ const Upload = () => {
       creatorUserId: userContext.user._id,
       itemStatus: true,
     }
-
-    console.log('formItems inside submitHandler:', JSON.stringify(ouput));
 
     dispatch(addListing(ouput));
     handleClose();
