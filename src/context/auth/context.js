@@ -18,18 +18,19 @@ function LoginProvider(props) {
     role: 'admin' >> or 
     userEmail: email,
     username: this will be email as well
+    userPicture: picture url
     _id: mongoId
 
   */
 
-  const login = async (input1, input2) => {
+  const login = async (input1, input2, input3) => {
 
-    // *** If api is having issues check .env to see if its on local or using deployed backend
+    // *** If api is having issues check .env to see if its using localhost or deployed backend
     const API = process.env.REACT_APP_API;
 
     try {
 
-      const response = await superagent.post(`${API}/authZero`).send({email:input1, name:input2})
+      const response = await superagent.post(`${API}/authZero`).send({email:input1, name:input2, picture:input3})
 
       console.log('Login got triggered and came back with response from API');
       const {user} = response.body;
