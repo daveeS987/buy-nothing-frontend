@@ -1,5 +1,5 @@
-# Pay Nothing
-A web application for giving things away for free or finding free items. A user can sign post or request an item. A user can also use guest view for window shopping. 
+# Buy Nothing
+A web application for giving things away for free or finding free items. We intended this application to mirror BuyNothing. A user can sign post or request an item. A user can also use guest view for window shopping. 
 
 
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
@@ -17,34 +17,37 @@ A web application for giving things away for free or finding free items. A user 
 
 #
 ## Architecture 
-Handles data pipeline through 3 distinct tiers.
+
 ```
-- Forwarder
-- Indexer
-- Search Head
+
 ```
 #
 
 
 ## UML Diagram
-Our UML diagram will give you insight on how SlipUp is wired. Click below for a whiteboard visual.
-- [Phase 1](./assets/phaseuml.md)
-- [Phase 2](./assets/img/slideuml.png)
+
+- [Welcome Page](./assets/wireframe/1_Welcome.pdf)
+- [Home Page](./assets/wireframe/2_Home.pdf)
+- [Item Details 1](./assets/wireframe/2.5_ItemDetails.pdf)
+- [Item Details 2](./assets/wireframe/2.75_ItemDetailsSelectUser.pdf)
+- [My Feed](./assets/wireframe/3_MyFeed.pdf)
+- [Create Post](./assets/wireframe/createPost.pdf)
 
 #
 
 ## Dependencies and Tools
 <img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"/>
 <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
-<img  align="left"alt="chalk "width="26px" src="./icons/semantic.png"/>
+<img  align="left"alt="Semantic UI" width="26px" src="./icons/semantic.png"/>
+<img align="left" alt="Auth0" width="26px" src="./icons/auth0-logo.png">
 <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"/>
 <img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"/> 
-<img align="left" alt="postgres sql" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png"/>
-<img  align="left"alt="Axios"width="26px" src="./icons/axiosimage.png"/>
+
+<img  align="left" alt="Axios" width="26px" src="./icons/axiosimage.png"/>
 </br>
 </br>
 <pre>
-<b>Javascript ➡ React ➡ Sql ➡ Semantic Ui ➡ PostgreSql ➡</b>
+<b>Javascript ➡ React ➡  Auth0 ➡ Semantic Ui ➡ MongoDB </b>
 </pre>
 
 #
