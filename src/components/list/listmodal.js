@@ -11,7 +11,7 @@ const ModalExampleScrollingContent = (props) => {
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      trigger={<Button>See Comments...</Button>}
+      trigger={<Button>Comments...</Button>}
       >
 
       <Modal.Content image>
