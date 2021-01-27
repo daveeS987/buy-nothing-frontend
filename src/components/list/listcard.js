@@ -22,7 +22,7 @@ function ListCard (props){
             <Card.Header>{props.item.title}</Card.Header>
             <Card.Meta >{props.item.location}</Card.Meta>
             <Card.Description>
-            {props.item.description}
+            {/* This makes the cards feel busy to me? Idk.  whatever you guys think. --Ryan{props.item.description} */}
             </Card.Description>
             
             <ListModal object={props.item}/>

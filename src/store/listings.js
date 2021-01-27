@@ -42,6 +42,17 @@ export const addListing = (payload) => async dispatch => {
 }
 
 
+export const addComment = (payload) => async dispatch => {
+
+  await axios({
+    method: 'PUT',
+    url: `http://localhost:5000/api/v1/listings/${payload.listingId}`,
+    data: payload.newListing
+  })
+
+  dispatch(getListings());
+}
+
 
 
 
