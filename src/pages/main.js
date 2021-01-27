@@ -11,7 +11,7 @@ import {getListings} from '../store/listings.js';
 
 
 function Main() {
-
+  
   const [view, setView] = useState('home');
 
   function changeView(newView) {

@@ -14,10 +14,10 @@ const Avatar = () => (
       header='Welcome back, Brook Riggio!'
       content='Current Location: Seattle'
     />
-    <LogoutButton />
     <LoginButton />
-    <Button>GUEST</Button>
-    <Button>SIGN UP</Button>
+    <LogoutButton />
+    {/* <Button>GUEST</Button>
+    <Button>SIGN UP</Button> */}
   </>
 )
 

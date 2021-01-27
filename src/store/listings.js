@@ -1,4 +1,8 @@
 import axios from 'axios';
+let API = process.env.REACT_APP_API;
+
+console.log('API', API);
+
 
 const intialState = [];
 

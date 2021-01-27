@@ -13,7 +13,7 @@ const LoginButton = () => {
     loginWithRedirect();
   }
 
-  return <button onClick={handleClick}>Log In</button>;
+  return <button class="ui button" onClick={handleClick}>Log In</button>;
 };
 
 export default LoginButton;

@@ -33,6 +33,7 @@ const Upload = () => {
 
   const uploadHandler = async (e) => {
     e.preventDefault();
+    console.log('this got triggered!');
 
     try {
       const formData = new FormData();
