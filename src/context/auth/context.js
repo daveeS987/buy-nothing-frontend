@@ -14,13 +14,14 @@ function LoginProvider(props) {
   /*
     user will have the following properties:
 
-    followedListings: [],
-    myListings: [],
-    role: 'admin' >> or 
-    userEmail: email,
-    username: this will be email as well
+    username: 
+    userEmail: 
     userPicture: picture url
-    _id: mongoId
+    role: 
+    permissions: 
+    myListings: 
+    followedListings: 
+    mongoId: 
 
   */
 
