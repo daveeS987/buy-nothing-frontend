@@ -8,14 +8,26 @@ const Profile = () => {
 
   const userContext = useContext(LoginContext);
   
+  // function timeout(ms) {
+  //   return new Promise(resolve => setTimeout(resolve, ms));
+  // }
+
+  // async function sleep(fn, ...args) {
+  //     await timeout(5000);
+  //     return fn(...args);
+  // }
+
+  // function anonfunc(input){
+  //   console.log(input)
+  // }
+
   useEffect(() => {
-
-
-    if(user) {
-      console.log('inside if statement:', user)
+    if(isAuthenticated) {
+      console.log('USEEFFECT RAN')
       userContext.login(user.email);
+      
     }
-  }, [user])
+  }, [isAuthenticated])
   
 
   if (isLoading) {

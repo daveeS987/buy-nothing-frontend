@@ -7,11 +7,10 @@ import {LoginContext} from '../auth/context.js'
 const LoginButton = () => {
   const { loginWithRedirect ,user } = useAuth0();
 
-  // const userContext = useContext(LoginContext);
+  const userContext = useContext(LoginContext);
 
   async function handleClick() {
     loginWithRedirect();
-    // await userContext.login(user.email);
   }
 
   return <button onClick={handleClick}>Log In</button>;

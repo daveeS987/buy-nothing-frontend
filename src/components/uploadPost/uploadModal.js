@@ -1,14 +1,15 @@
-import React, {  useState, useEffect } from "react";
+import React, {  useState, useEffect, useContext } from "react";
 import {useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Form, Dropdown } from 'semantic-ui-react';
 import axios from "axios";
 
 
 import {addListing} from '../../store/listings.js';
-
+import {LoginContext} from '../../context/auth/context.js';
 
 const Upload = () => {
 
+  const userContext = useContext(LoginContext);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   // const [description, setDescription] = useState("");
@@ -55,12 +56,13 @@ const Upload = () => {
   const submitHandler = async(e) => {
     e.preventDefault();
 
+    console.log('userContext.user:', userContext.user);
     let ouput = {
       ...formItems,
       comments: [],
       commentors: [],
-      creatorUserName: 'hardCoded userName',
-      creatorUserId: 'hardCoded creatorUserId',
+      creatorUserName: userContext.user.username,
+      creatorUserId: userContext.user._id,
       itemStatus: true,
     }
 

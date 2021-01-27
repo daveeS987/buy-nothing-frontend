@@ -9,38 +9,20 @@ function LoginProvider(props) {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
-  const [userId, setUserId] = useState('');
-
-  const signUp = async(input) => {
-
-    const API = process.env.REACT_APP_API;
-
-    try{
-      const response = await superagent.post(`${API}/signup`).send(input);
-      // login(input);
-
-    } catch(e) {
-      console.warn('Something Bad Happened. Error in Signing Up')
-    }
-  }
 
   const login = async (input) => {
     const API = process.env.REACT_APP_API;
-
     const LocalHost = 'http://localhost:5000';
 
     try {
-      // const response = await superagent.post(`${API}/signin`)
-      //   .auth( input.username, input.password );
+
       const response = await superagent.post(`${LocalHost}/authZero`).send({email:input})
 
-      console.log('response line 37:', response.body);
-      // This is the ID that MONGO gives
-      setUserId(response.body.user._id)
-      // console.log('userId is now set to use in context:', userId);
-
+      console.log('Login response came back from API');
+      const {user} = response.body;
       const {token} = response.body;
-      validateToken(token);
+
+      validateToken(token, user);
 
     } catch(e) {
       console.warn('Login Attempt Failed');
@@ -48,23 +30,23 @@ function LoginProvider(props) {
   }
 
 
-  const validateToken = (token) => {
+  const validateToken = (token, validUser) => {
 
     try {
       let tokenUser = jwt.verify(token, process.env.REACT_APP_SECRET)
 
       // if we're here, the token was good
       setIsLoggedIn(true);
-      setUser(tokenUser)
-      // console.log('tokenUser', tokenUser);
+      setUser(validUser)
+      // console.log(validUser)
+      // console.log('tokenUser-------', tokenUser);
       cookie.save('auth', token);
-      console.log('Succesfully logged in');
+      console.log('Token has been validated');
       // set a cookie so that we can stay logged in
       // Optionally, make it only last 1 hour or until you close
     } catch(e) {
       setIsLoggedIn(false);
       setUser({});
-      setUserId('')
       console.warn("Token Validation Error");
     }
   }
@@ -77,13 +59,11 @@ function LoginProvider(props) {
       role: 'guest',
       permissions: ['read']
     })
-    setUserId('guest');
   }
 
   const logout = () => {
     setIsLoggedIn(false);
     setUser({});
-    setUserId('')
   }
 
   useEffect( () => {
@@ -94,7 +74,7 @@ function LoginProvider(props) {
 
   return (
     <LoginContext.Provider
-      value={ {isLoggedIn, user, userId, login, logout, guestLogin, signUp} }
+      value={ {isLoggedIn, user, login, logout, guestLogin} }
     >
       {props.children}
     </LoginContext.Provider>
