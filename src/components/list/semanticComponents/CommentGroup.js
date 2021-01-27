@@ -7,17 +7,17 @@ function CommentGroup (props){
   let comments = props.listing.comments;
   
   return (
-  <Comment.Group size='mini'>
-    <Header as='h3' dividing>
-      Comments
+    <Comment.Group size='mini'>
+      <Header as='h3' dividing>
+        Comments
     </Header>
-    {
-      comments.map(comment => {
-        return (
-        <ListingComment comment={comment} />
-        )
-      })
-    }
+      {
+        comments.map(comment => {
+          return (
+            <ListingComment comment={comment} />
+          )
+        })
+      }
 
   <br></br>
     <Form.Group size ='mini'>
