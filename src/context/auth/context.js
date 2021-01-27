@@ -53,7 +53,7 @@ function LoginProvider(props) {
       setUser(validUser)
       console.log('user object that is set in context:', validUser);
       cookie.save('auth', token);
-      console.log('Token has been validated');
+      console.log('Token has been Validated');
       // set a cookie so that we can stay logged in
       // Optionally, make it only last 1 hour or until you close
     } catch(e) {

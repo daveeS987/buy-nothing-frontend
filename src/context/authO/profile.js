@@ -11,7 +11,6 @@ const Profile = () => {
   useEffect(() => {
     if(isAuthenticated) {
       console.log('userContext.Login got triggered and will try to login')
-      console.log('user object that authZero gave us:', user);
       userContext.login(user.email, user.name, user.picture);
     }
   }, [isAuthenticated])
