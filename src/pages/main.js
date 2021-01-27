@@ -21,7 +21,6 @@ function Main() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('this is from main, useEffect');
     dispatch(getListings())
   }, [])
 
