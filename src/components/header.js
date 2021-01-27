@@ -24,9 +24,10 @@ export default function HeaderComponent() {
       <div style={{border: "3px solid blue", height: "100%"}}></div>
 
 
-        <Header as='h2' icon textAlign='center'>
+        {/* <Header as='h2' icon textAlign='center'>
 
-        </Header>
+        </Header> */}
+        
       </Grid.Column>
 
        {/* COLUMN THREE */}

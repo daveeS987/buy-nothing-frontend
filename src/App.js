@@ -20,7 +20,7 @@ function App() {
             <Switch>
 
               <Route exact path='/'>
-                <Profile/>
+  za
                 <Main/>
               </Route>
 
