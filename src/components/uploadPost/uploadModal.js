@@ -3,7 +3,6 @@ import {useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Form, Dropdown } from 'semantic-ui-react';
 import axios from "axios";
 
-import UploadForm from './uploadForm.js';
 
 import {addListing} from '../../store/listings.js';
 
@@ -12,7 +11,7 @@ const Upload = () => {
 
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [description, setDescription] = useState("");
+  // const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
 
@@ -38,9 +37,9 @@ const Upload = () => {
       const formData = new FormData();
 
       formData.append("picture", image, image.name);
-      formData.append("desc", description);
+      // formData.append("desc", description);
 
-      let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v2/imghandler/upload', formData);
+      let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v1/imghandler/upload', formData);
 
       console.log('res.data.createdImage.url:', res.data.createdImage.url)
       setFormItems({...formItems, imageUrl: res.data.createdImage.url})
@@ -97,17 +96,6 @@ const Upload = () => {
         </Modal.Content>
         <Modal.Content>
           <form onSubmit={uploadHandler}>
-            <div>
-              <label htmlFor="desc">description</label>
-              <input
-                onChange={(e) => setDescription(e.target.value)}
-                type="text"
-                value={description}
-                className="form-control"
-                required
-                id="desc"
-              />
-            </div>
 
             <div >
               <div >

@@ -20,13 +20,9 @@ export default function SidebarComponent(props) {
 
         <Menu.Item as='a' onClick={() => props.changeView('myFeed')}>
           <Icon name='comments outline' />
-          Messages
+          My Feed
         </Menu.Item>
 
-        <Menu.Item as='a' onClick={() => props.changeView('welcome')}>
-          <Icon name='comments outline' />
-          Welcome
-        </Menu.Item>
       </Sidebar>
     </>
   )
