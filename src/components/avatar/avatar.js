@@ -16,8 +16,7 @@ const Avatar = () => (
     />
     <LoginButton />
     <LogoutButton />
-    {/* <Button>GUEST</Button>
-    <Button>SIGN UP</Button> */}
+
   </>
 )
 

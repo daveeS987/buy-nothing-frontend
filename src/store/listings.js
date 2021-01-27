@@ -1,8 +1,6 @@
 import axios from 'axios';
+
 let API = process.env.REACT_APP_API;
-
-console.log('API', API);
-
 
 const intialState = [];
 
@@ -24,7 +22,7 @@ export const getListings = () => async dispatch => {
   
   let listings = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/v1/listings'
+    url: `${API}/api/v1/listings`
   });
 
   dispatch({
@@ -38,7 +36,7 @@ export const addListing = (payload) => async dispatch => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/v1/listings',
+    url: `${API}/api/v1/listings`,
     data: payload
   })
 
@@ -50,7 +48,7 @@ export const addComment = (payload) => async dispatch => {
 
   await axios({
     method: 'PUT',
-    url: `http://localhost:5000/api/v1/listings/${payload.listingId}`,
+    url: `${API}/api/v1/listings/${payload.listingId}`,
     data: payload.newListing
   })
 
