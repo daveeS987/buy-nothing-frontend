@@ -1,21 +1,73 @@
-import Signup from './signup/signup.js';
-import Login from '../context/auth/login.js';
 import LoginButton from '../context/authO/authOlogin.js';
 import LogoutButton from '../context/authO/authOlogout.js';
+import { Grid } from 'semantic-ui-react'
+import LogoImage from '../components/logo/logo.js'
 
 function WelcomePage() {
 
   return (
     <>
-      <h1>Welcome Page</h1>
-      <Signup />
-      <Login />
+    
+    <Grid container columns={3} centered >
+    
+    <Grid.Row>  
+    <Grid.Column>
+      
+    </Grid.Column> 
+    <Grid.Column  style={{ height: "10em"}} >
+    {/* for spacing */}
+    </Grid.Column>
+    <Grid.Column>
+      
+    </Grid.Column>
+    </Grid.Row>
 
-      <h1>Auth O Login</h1>
-      <LoginButton/>
+    {/* ROW 2 */}
 
-      <h1>Auth O Logout</h1>
-      <LogoutButton />
+    <Grid.Row>  
+    <Grid.Column>
+      
+    </Grid.Column>
+    <Grid.Column>
+    <LogoImage/>
+    </Grid.Column>
+    <Grid.Column>
+      
+    </Grid.Column>
+    </Grid.Row>
+
+    {/* ROW 3: Button Spacing */}
+    <Grid.Row columns={7}>  
+
+    <Grid.Column >
+      
+    </Grid.Column>
+
+    <Grid.Column >
+    </Grid.Column>
+    <Grid.Column >
+      
+    <LoginButton />
+    </Grid.Column>
+    <Grid.Column >
+      
+    <LogoutButton />
+    </Grid.Column>
+    <Grid.Column >
+      
+    </Grid.Column>
+    <Grid.Column >
+      
+    </Grid.Column>
+
+    </Grid.Row>
+  </Grid>
+
+
+      
+
+      
+      
 
     </>
   )

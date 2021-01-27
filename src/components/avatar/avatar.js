@@ -3,6 +3,9 @@ import {Icon, Message, Button } from 'semantic-ui-react'
 
 import LogoutButton from '../../context/authO/authOlogout';
 
+import LoginButton from '../../context/authO/authOlogin'
+
+
 
 const Avatar = () => (
   <>
@@ -11,9 +14,10 @@ const Avatar = () => (
       header='Welcome back, Brook Riggio!'
       content='Current Location: Seattle'
     />
+    <LoginButton />
     <LogoutButton />
-    <Button>GUEST</Button>
-    <Button>SIGN UP</Button>
+    {/* <Button>GUEST</Button>
+    <Button>SIGN UP</Button> */}
   </>
 )
 

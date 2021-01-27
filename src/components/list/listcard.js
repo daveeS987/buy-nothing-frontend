@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Grid, Icon, Image} from 'semantic-ui-react'
-// import ListModal from './listmodal.js'
-import ModalExampleScrollingContent from './listmodal.js'
+import ListModal from './listmodal.js'
 
 function ListCard (props){
 
@@ -23,11 +22,11 @@ function ListCard (props){
             <Card.Header>{props.item.title}</Card.Header>
             <Card.Meta >{props.item.location}</Card.Meta>
             <Card.Description>
-            {props.item.description}
+            {/* This makes the cards feel busy to me? Idk.  whatever you guys think. --Ryan{props.item.description} */}
             </Card.Description>
-            {/* <ListModal/> */}
-            <ModalExampleScrollingContent object={props.item}/>
-            </Card.Content>
+            
+            <ListModal object={props.item}/>
+          </Card.Content>
         </Grid.Column>
       </Grid.Row>
     </Grid>
