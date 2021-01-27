@@ -1,8 +1,11 @@
 import axios from 'axios';
+
 let API = process.env.REACT_APP_API;
 
-console.log('API', API);
-
+console.log('----------------------------------------------------')
+console.log('This is the current Backened API:', API);
+console.log('If you are developing locally it should be localhost:5000, not heroku');
+console.log('Check your REACT APP .env file')
 
 const intialState = [];
 
@@ -24,7 +27,7 @@ export const getListings = () => async dispatch => {
   
   let listings = await axios({
     method: 'GET',
-    url: 'http://localhost:5000/api/v1/listings'
+    url: `${API}/api/v1/listings`
   });
 
   dispatch({
@@ -38,7 +41,7 @@ export const addListing = (payload) => async dispatch => {
 
   await axios({
     method: 'POST',
-    url: 'http://localhost:5000/api/v1/listings',
+    url: `${API}/api/v1/listings`,
     data: payload
   })
 
@@ -50,56 +53,10 @@ export const addComment = (payload) => async dispatch => {
 
   await axios({
     method: 'PUT',
-    url: `http://localhost:5000/api/v1/listings/${payload.listingId}`,
+    url: `${API}/api/v1/listings/${payload.listingId}`,
     data: payload.newListing
   })
 
   dispatch(getListings());
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const decrementStock = (payload) => async dispatch => {
-
-//   payload.inStock = payload.inStock-=1;
-
-//   await axios({
-//     method: 'PUT',
-//     url: `https://davee-auth-api-server.herokuapp.com/api/v1/products/${payload._id}`,
-//     data: payload
-//   })
-
-//   dispatch(getProducts());
-// }
-
-// export const putStockBack = (payload) => async dispatch => {
-
-//   let amount = payload.count;
-//   let newObj = payload.obj;
-//   newObj.inStock = newObj.inStock+amount;
-
-//   await axios({
-//     method: 'PUT',
-//     url: `https://davee-auth-api-server.herokuapp.com/api/v1/products/${newObj._id}`,
-//     data: newObj
-//   })
-  
-//   dispatch(getProducts());
-// }

@@ -1,28 +1,28 @@
-
 # Buy Nothing
-Inspired by Buy Nothing,This is A web application for giving things away for free or finding things for free. 
+
+Inspired by Buy Nothing,This is A web application for giving things away for free or finding things for free.
 
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
 
 **Contributors**: Ryan Geddes, Davee Sok, Sarah Shatto, Jonathon Lee.
 
-
-
 **Version**: 1.0.0
 
 ## Project Overview
+
 - A user can sign in or continue as guest.
 - Upon sign up a user can upload a profile picture.
 - Upon sign up or login a user can reply to a post or create a post.
 
 #
-## Architecture 
+
+## Architecture
 
 ```
 
 ```
+
 #
-
 
 ## Page Wire Frames
 
@@ -36,12 +36,13 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 #
 
 ## Dependencies and Tools
+
 <img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"/>
 <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
 <img  align="left"alt="Semantic UI" width="26px" src="./icons/semantic.png"/>
 <img align="left" alt="Auth0" width="26px" src="./icons/auth0-logo.png">
 <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"/>
-<img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"/> 
+<img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"/>
 
 <img  align="left" alt="Axios" width="26px" src="./icons/axiosimage.png"/>
 </br>
@@ -54,7 +55,6 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 
 ## Getting started
 
-
 #
 
 ## Buy Nothing
@@ -64,12 +64,15 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 
 ```
 
+# Our notes while developing
 
+```
+During local production, .env file should have:
+REACT_APP_API=http://localhost:5000
 
+Switch >>>>>>>>>>>>
 
-#
+When Testing backend change .env:
+REACT_APP_API=https://buynothingbackend.herokuapp.com
 
-
-
-https://buynothingbackend.herokuapp.com
-
+```
