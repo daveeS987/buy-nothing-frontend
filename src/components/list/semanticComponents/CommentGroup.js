@@ -58,7 +58,7 @@ function CommentGroup (props){
   <br></br>
 
     <Form.Group size ='mini'>
-      <If condition={isAuthenticated} >
+      <If condition={LoginContext.userName !==''} >
         <Then>
           <Form reply>
             <Form.Input placeholder='Add a reply...' onChange={handleChange} />
