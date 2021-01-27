@@ -42,6 +42,29 @@ export const addListing = (payload) => async dispatch => {
 }
 
 
+export const addComment = (payload) => async dispatch => {
+
+
+  
+  // console.log('new comment Obj, to be pushed into updated Listng',newCommentObj)
+  // console.log('payload.listing', payload.listing)
+
+  // payload.listing.comments.push(newCommentObj);
+  // console.log('fully updated listing ready to put', payload.listing)
+
+  console.log('payload.newListing:', payload.newListing)
+  console.log('payload.listingId:', payload.listingId)
+ 
+
+  await axios({
+    method: 'PUT',
+    url: `http://localhost:5000/api/v1/listings/${payload.listingId}`,
+    data: payload.newListing
+  })
+
+  dispatch(getListings());
+}
+
 
 
 
