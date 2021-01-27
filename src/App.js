@@ -11,6 +11,7 @@ import Profile from './context/authO/profile.js'
 import Welcome from './pages/welcome.js';
 
 function App() {
+  console.log('this is from app')
   return (
 
     <LoginContext>

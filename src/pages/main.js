@@ -11,7 +11,7 @@ import {getListings} from '../store/listings.js';
 
 
 function Main() {
-
+  
   const [view, setView] = useState('home');
 
   function changeView(newView) {
@@ -21,6 +21,7 @@ function Main() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('this is from main, useEffect');
     dispatch(getListings())
   }, [])
 
