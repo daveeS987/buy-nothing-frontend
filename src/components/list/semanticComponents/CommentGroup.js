@@ -2,9 +2,10 @@ import React from 'react'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import ListingComment from './Comment.js'
 
-const CommentGroup = (props) => (
+function CommentGroup (props){
 
   let comments = props.listing.comments;
+  
   return (
   <Comment.Group size='mini'>
     <Header as='h3' dividing>
@@ -27,7 +28,7 @@ const CommentGroup = (props) => (
     </Form.Group>
   
   </Comment.Group>
-)
-)
+  )
+}
 
 export default CommentGroup;              
