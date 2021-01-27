@@ -9,15 +9,13 @@ import {LoginContext} from '../../context/auth/context.js';
 
 function Avatar(){
 
-  const userContext = useContext(LoginContext);
-
-  const thisuser = userContext.user.username || '';
+  let userContext = useContext(LoginContext);
 
   return (
     <>
       <Message
         icon='user circle outline'
-        header={`Welcome Back ${thisuser}!`}
+        header={`Welcome Back ${userContext.userName}!`}
         // content='Current Location: Seattle'
       />
 

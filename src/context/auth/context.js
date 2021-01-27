@@ -9,6 +9,7 @@ function LoginProvider(props) {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  const [userName, setUserName] = useState('');
 
   /*
     user will have the following properties:
@@ -51,6 +52,7 @@ function LoginProvider(props) {
 
       setIsLoggedIn(true);
       setUser(validUser)
+      setUserName(validUser.username)
       console.log('user object that is set in context:', validUser);
       cookie.save('auth', token);
       console.log('Token has been Validated');
@@ -88,7 +90,7 @@ function LoginProvider(props) {
 
   return (
     <LoginContext.Provider
-      value={ {isLoggedIn, user, login, logout, guestLogin} }
+      value={ {isLoggedIn, user, userName, login, logout, guestLogin} }
     >
       {props.children}
     </LoginContext.Provider>
