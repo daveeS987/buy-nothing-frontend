@@ -11,18 +11,22 @@ function Avatar(){
 
   let userContext = useContext(LoginContext);
 
+  let message = userContext.isLoggedIn ? `Welcome Back ${userContext.userName}!` : 'Welcome! Please Sign In'
+
   return (
     <>
       <Message
         icon='user circle outline'
-        header={`Welcome Back ${userContext.userName}!`}
-        // content='Current Location: Seattle'
+        header={message}
       />
 
-      <When condtion={!userContext.isLoggedIn}>
+      <When condition={!userContext.isLoggedIn}>
         <LoginButton />
       </When>
-      <LogoutButton />
+
+      <When condition={userContext.isLoggedIn}>
+        <LogoutButton />
+      </When>
     </>
   )
 } 

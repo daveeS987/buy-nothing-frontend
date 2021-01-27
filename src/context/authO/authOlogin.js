@@ -5,7 +5,7 @@ import {LoginContext} from '../auth/context.js'
 
 
 const LoginButton = () => {
-  const { loginWithRedirect ,user } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
 
   const userContext = useContext(LoginContext);
 

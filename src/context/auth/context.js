@@ -37,7 +37,7 @@ function LoginProvider(props) {
       const {user} = response.body;
       const {token} = response.body;
 
-      validateToken(token, user);
+      validateToken(token);
 
     } catch(e) {
       console.warn('Login Attempt Failed');
@@ -45,15 +45,18 @@ function LoginProvider(props) {
   }
 
 
-  const validateToken = (token, validUser) => {
+  const validateToken = (token) => {
 
     try {
       let tokenUser = jwt.verify(token, process.env.REACT_APP_SECRET)
 
-      setIsLoggedIn(true);
-      setUser(validUser)
-      setUserName(validUser.username)
-      console.log('user object that is set in context:', validUser);
+      if(tokenUser.username) {
+        setIsLoggedIn(true);
+        console.log('isLogged in turned to true');
+      }
+      setUser(tokenUser)
+      setUserName(tokenUser.username)
+      console.log('user object that is set in context:', tokenUser);
       cookie.save('auth', token);
       console.log('Token has been Validated');
       // set a cookie so that we can stay logged in
