@@ -18,7 +18,7 @@ const ListModal = (props) => {
       >
 
       <Modal.Content image>
-        <Image size='medium' src={props.object.imageUrl} wrapped  
+        <Image size='large' src={props.object.imageUrl} wrapped  
         style={{
           margin : "auto"
           }}
@@ -30,6 +30,7 @@ const ListModal = (props) => {
         <Modal.Description >
           <Container text>
             <Header as='h1'>{props.object.title}</Header>
+            <Header as='h2'>Location: {props.object.location}</Header>
             <p>{props.object.description}</p>
           </Container>
 
