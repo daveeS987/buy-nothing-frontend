@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Icon, Image, Modal } from 'semantic-ui-react'
+import { Button, Icon, Image, Modal, Container, Header } from 'semantic-ui-react'
 import ListingCommentGroup from './semanticComponents/CommentGroup.js';
 
 const ListModal = (props) => {
@@ -28,12 +28,12 @@ const ListModal = (props) => {
 
       <Modal.Content image scrolling>
         <Modal.Description >
-          <h1> {props.object.title} </h1> 
-          <p>{props.object.description}</p>
+          <Container text>
+            <Header as='h1'>{props.object.title}</Header>
+            <p>{props.object.description}</p>
+          </Container>
 
-          <ListingCommentGroup listing={props.object}/>
-
-
+        <ListingCommentGroup listing={props.object}/>
         </Modal.Description>
       </Modal.Content>
 
