@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'// bring this in
-import { Message, Card, Feed, Image, Grid, Row, Column, Input} from 'semantic-ui-react'
+import { Message, Card, Feed, Image, Grid, Row, Column, Input, Container } from 'semantic-ui-react'
 import {  When } from 'react-if';
 
 import LogoutButton from '../../context/authO/authOlogout';// bring in
@@ -22,14 +22,25 @@ function Avatar(){
 
       <Grid>
         <Grid.Column>
-        <Grid.Row style={{border: "3px dashed purple", height:"60%"}}>
+          {/* IMAGE ROW */}
+        <Grid.Row  style={{ height:"60%", display: "block", padding: "1em" }} >
           {/* <div style={{ width: "100%", display: "block" }}>
           </div> */}
-      <Image src={userImageUrl} size='small' centered circular />
+      <Image style={{ display: "block", padding: "1.5em" }} src={userImageUrl} size='small' centered circular />
+        </Grid.Row>
+        <Grid.Row >
+
         </Grid.Row>
 
-        <Grid.Row style={{border: "3px dashed purple"}}>  
-      <Message header={message} size="mini" />
+          {/* WELCOME */}
+        <Grid.Row style={{ paddingRight: "2em"}}  >  
+      {/* <Message info header={message} size="mini" /> */}
+      <Container textAlign='center' style={{ display: "block", padding: "1em" }}>
+    <p>
+      {message}
+    </p>
+      
+  </Container>
       <When condition={!userContext.isLoggedIn}>
         <LoginButton />
       </When>
@@ -37,7 +48,7 @@ function Avatar(){
       <When condition={userContext.isLoggedIn}>
         {/* <LogoutButton /> */}
       </When>
-        <Input
+        <Input fluid
               icon={{ name: 'search', circular: true, link: true }}
               placeholder='Search...'
             />

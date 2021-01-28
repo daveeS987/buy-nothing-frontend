@@ -26,7 +26,7 @@ function SearchComponent() {
         </Grid.Row >
 
           
-        <Grid.Row style={{border: "3px dashed red", height: "100%"}}> 
+        <Grid.Row style={{border: "3px dashed red", height: "100%", textAlign: "center"}}> 
         
 
         <Button.Group basic>
@@ -37,31 +37,22 @@ function SearchComponent() {
           <Button>Furniture</Button>
 
 
-          <Button>Children</Button>
+          {/* <Button>Children</Button> */}
 
 
           <Button>Sports</Button>
 
 
-          <Button>Shoes</Button>
+          {/* <Button>Shoes</Button> */}
 
-
-          <Button>Electronics</Button>
-        </Button.Group>
-
-        <Button.Group basic >
           <Button>Books</Button>
-
-          <Button>Crafts</Button>
-
-          <Button>Antiques</Button>
-
           <Button>Appliances</Button>
 
+          <Button>Electronics</Button>
           <Button>Auto</Button>
 
           <Button >Music  </Button>
-          </Button.Group>
+        </Button.Group>
           
        
         </Grid.Row >
