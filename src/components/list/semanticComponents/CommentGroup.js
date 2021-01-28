@@ -39,6 +39,10 @@ function CommentGroup (props){
     }
 
     dispatch(addComment(payload))
+    setNewComment({
+      text: '', 
+      username: userContext.user.username
+    });
   }
   
   
@@ -61,7 +65,7 @@ function CommentGroup (props){
       <If condition={LoginContext.userName !==''} >
         <Then>
           <Form reply>
-            <Form.Input placeholder='Add a reply...' onChange={handleChange} />
+            <Form.Input placeholder='Add a reply...' value={commentText.text}  onChange={handleChange} />
             <Button onClick={handleSubmit} content='Add Reply' labelPosition='left' icon='edit' primary />
           </Form>
         </Then>

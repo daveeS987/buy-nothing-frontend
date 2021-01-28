@@ -107,7 +107,7 @@ const Upload = () => {
   const preUploadImg = () => {
     if (image)
       return (
-          <img id="target" src={image} style={{width:'300px', height:'300px'} } /> 
+          <img id="target" alt="uploadedimage" src={image} style={{width:'300px', height:'300px'} } /> 
       );
 
     return null;
@@ -144,7 +144,7 @@ const Upload = () => {
             <div >
               <div >
               <div>
-                {image ? preUploadImg() : < img id="placeholderimg" src={'https://via.placeholder.com/300x300?text=Upload+Image'}/>}
+                {image ? preUploadImg() : < img id="placeholderimg" alt="preuploadimage" src={'https://via.placeholder.com/300x300?text=Upload+Image'}/>}
               </div>
                 <input
                   type="file"
