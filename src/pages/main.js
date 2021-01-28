@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
-import {useDispatch, useSelector } from 'react-redux';
-import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
+import {useDispatch} from 'react-redux';
+import { Switch, Case} from 'react-if';
 import { useAuth0 } from "@auth0/auth0-react";
 
 import {LoginContext} from '../context/auth/context.js';
@@ -18,7 +18,7 @@ function Main() {
   const dispatch = useDispatch();
   const [view, setView] = useState('home');
   const userContext = useContext(LoginContext);
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
   function changeView(newView) {
     setView(newView);
@@ -29,11 +29,13 @@ function Main() {
       console.log('userContext.Login got triggered and will try to login')
       userContext.login(user.email, user.name, user.picture);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated])
 
 
   useEffect(() => {
     dispatch(getListings())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

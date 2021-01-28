@@ -35,7 +35,7 @@ function LoginProvider(props) {
       const response = await superagent.post(`${API}/authZero`).send({email:input1, name:input2, picture:input3})
 
       console.log('Login got triggered and came back with response from API');
-      const {user} = response.body;
+      // const {user} = response.body;
       const {token} = response.body;
 
       validateToken(token);

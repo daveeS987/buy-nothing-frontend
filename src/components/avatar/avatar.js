@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import {Icon, Message, Button } from 'semantic-ui-react'
-import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
+import { Message} from 'semantic-ui-react'
+import {  When } from 'react-if';
 
 import LogoutButton from '../../context/authO/authOlogout';
 import LoginButton from '../../context/authO/authOlogin'

@@ -1,6 +1,6 @@
-import React, {  useState, useEffect, useContext } from "react";
-import {useDispatch, useSelector } from 'react-redux';
-import { Modal, Button, Form, Dropdown } from 'semantic-ui-react';
+import React, {  useState, useContext } from "react";
+import {useDispatch } from 'react-redux';
+import { Modal, Button, Form } from 'semantic-ui-react';
 import axios from "axios";
 
 

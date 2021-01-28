@@ -1,16 +1,16 @@
 import React, {useContext, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import ListingComment from './Comment.js';
 import {If, Then, Else} from 'react-if';
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 
 import {addComment} from '../../../store/listings.js';
 import {LoginContext} from '../../../context/auth/context.js';
 
 function CommentGroup (props){
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  // const { user, isAuthenticated, isLoading } = useAuth0();
 
   const dispatch = useDispatch();
   const userContext = useContext(LoginContext);
