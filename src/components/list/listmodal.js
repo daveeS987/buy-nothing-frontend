@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Icon, Image, Modal, Container, Header } from 'semantic-ui-react'
+import { Button, Icon, Image, Modal, Container, Header, Message } from 'semantic-ui-react'
 import ListingCommentGroup from './semanticComponents/CommentGroup.js';
 
 const ListModal = (props) => {
@@ -13,12 +13,12 @@ const ListModal = (props) => {
       onOpen={() => setOpen(true)}
 
   
-      trigger={<Button>Details</Button>}
+      trigger={<Button>See Details</Button>}
 
       >
 
       <Modal.Content image>
-        <Image size='medium' src={props.object.imageUrl} wrapped  
+        <Image size='large' src={props.object.imageUrl} wrapped  
         style={{
           margin : "auto"
           }}
@@ -30,7 +30,12 @@ const ListModal = (props) => {
         <Modal.Description >
           <Container text>
             <Header as='h1'>{props.object.title}</Header>
-            <p>{props.object.description}</p>
+            <Header as='h3'>Location: {props.object.location}</Header>
+            <Header as='h5'>Posted By: {props.object.creatorUserName}</Header>
+            <Message>
+            <Header as='h5'>Details:</Header>
+              <p>{props.object.description}</p>
+            </Message>
           </Container>
 
         <ListingCommentGroup listing={props.object}/>
