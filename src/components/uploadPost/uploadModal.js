@@ -61,7 +61,7 @@ const Upload = () => {
       comments: [],
       commentors: [],
       creatorUserName: userContext.user.username,
-      creatorUserId: userContext.user._id,
+      creatorUserId: userContext.user.mongoId,
       itemStatus: true,
     }
 
