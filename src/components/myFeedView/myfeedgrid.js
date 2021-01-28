@@ -9,7 +9,7 @@ import UploadModal from '../uploadPost/uploadModal.js';
 function MyFeedGrid() {
 
   const [view, setView] = useState('myPost');
-  console.log('view:', view);
+  console.log('view----------------------:', view);
 
   return (
     <>

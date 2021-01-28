@@ -11,19 +11,21 @@ function ListItems (props){
 
   const userContext = useContext(LoginContext);
   let listings = useSelector(state => state.listings)
+  let filteredList = [...listings];
 
 
   console.log('userContext.user', userContext.user);
   console.log('listings:', listings);
+  console.log('filteredList:', filteredList);
   console.log('props', props);
 
   
   if(props.filterBy && userContext.user.mongoId) {
     console.log('props.filterMyFeed:', props.filterBy);
-    let filtered = listings.filter( list => {
+    filteredList = listings.filter( list => {
       return list.creatorUserId === userContext.user.mongoId;
     })
-    console.log('filtered:', filtered);
+    console.log('filtered:', filteredList);
   }
 
 
