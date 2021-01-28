@@ -1,35 +1,54 @@
-import { Grid, Button, Input } from 'semantic-ui-react'
+import { Grid, Button, GridColumn } from 'semantic-ui-react'
 
 function SearchComponent() {
 
   return (
     <>
+    <div style={{ padding: "2rem"}}>
+    
+    <Button.Group widths='6' style={{ marginBottom: "1rem", textAlign: "center"}}>
 
-      <Grid>
+          <Button basic color='teal'>Clothes</Button>
 
-        <Grid.Row columns={3} style={{ border: "1px dashed red", height: "100%"}} >
 
-          <Grid.Column >
+          <Button basic color='pink'>Furniture</Button>
 
-          </Grid.Column>
+          <Button basic color='blue'>Sports</Button>
 
-          {/* <Grid.Column > */}
-            {/* <Input
-              icon={{ name: 'search', circular: true, link: true }}
-              placeholder='Search...'
-            /> */}
-          {/* </Grid.Column> */}
+          <Button basic color='pink'>Books</Button>
+          <Button basic color='teal'>Appliances</Button>
 
-          <Grid.Column >
+          <Button basic color='blue'>Electronics</Button>
 
-          </Grid.Column>
-        </Grid.Row >
+        </Button.Group>
 
-        <Grid.Row style={{height: "100%", textAlign: "center"}}> 
+        <Button.Group widths='6' style={{ textAlign: "center", margin: "auto"}}>
+
+          <Button basic color='teal'>Clothes</Button>
+          <Button basic color='teal'>Clothes</Button>
+
+          <Button basic color='pink'>Furniture</Button>
+
+          <Button basic color='blue'>Sports</Button>
+
+          <Button basic color='pink'>Auto</Button>
+
+          <Button basic color='teal'>Music  </Button>
+
+        </Button.Group>
+
+  
+  </div>
+
+      {/* <Grid style={{border: "1px solid blue", height: "100%", textAlign: "center"}}>
+
+        <Grid.Row columns={3}>
+
+        <Grid.Row style={{border: "1px solid red", height: "100%", textAlign: "center"}}> 
         
-        <Grid.Column>
+        <Grid.Column fluid  >
 
-        <Button.Group>
+        <Button.Group widths='8' style={{ textAlign: "center", margin: "auto"}}>
 
           <Button basic color='teal'>Clothes</Button>
 
@@ -50,7 +69,10 @@ function SearchComponent() {
           
         </Grid.Column>
         </Grid.Row >
-      </Grid>
+
+        </Grid.Row>
+
+      </Grid> */}
 
     </>
   )
