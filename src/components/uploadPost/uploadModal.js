@@ -12,7 +12,6 @@ const Upload = () => {
   const userContext = useContext(LoginContext);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  // const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
   const [imgData, setImgData] = useState(null);
@@ -23,6 +22,9 @@ const Upload = () => {
 
   const [formItems, setFormItems ] = useState({});
 
+
+  console.log(formItems);
+  
   const handleChange = (e) => {
     let newItems = {
       ...formItems, 
@@ -73,17 +75,18 @@ const Upload = () => {
 
   const submitHandler = async(e) => {
     e.preventDefault();
-
-    let ouput = {
+    
+    let output = {
       ...formItems,
       comments: [],
       commentors: [],
       creatorUserName: userContext.user.username,
-      creatorUserId: userContext.user._id,
+      creatorUserId: userContext.user.mongoId,
       itemStatus: true,
     }
-
-    dispatch(addListing(ouput));
+    console.log('uercontext 84',userContext.user);
+    console.log('output line 84', output);
+    dispatch(addListing(output));
     handleClose();
   }
 

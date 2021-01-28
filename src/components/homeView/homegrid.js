@@ -11,12 +11,24 @@ function HomeGrid() {
   return (
     <>
       <Grid>
-
+          <Grid.Row>
           <Grid.Column width={5}>
           </Grid.Column>
 
           <Grid.Column centered width={6}>
+
             <SearchComponent/>
+          </Grid.Column>
+
+          <Grid.Column width={10}>
+          </Grid.Column>
+          </Grid.Row>
+          
+          <Grid.Column width={5}>
+          </Grid.Column>
+
+          <Grid.Column centered width={6}>
+          {/* <SearchComponent/> */}
             <ListItem />
           </Grid.Column>
 
