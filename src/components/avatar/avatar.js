@@ -33,7 +33,7 @@ function Avatar(){
         </Grid.Row>
 
           {/* WELCOME */}
-        <Grid.Row style={{ paddingRight: "2em"}}  >  
+        <Grid.Row style={{ textAlign: "center", paddingRight: "2em"}}  >  
       {/* <Message info header={message} size="mini" /> */}
       <Container textAlign='center' style={{ display: "block", padding: "1em" }}>
     <p>
@@ -41,17 +41,20 @@ function Avatar(){
     </p>
       
   </Container>
+
       <When condition={!userContext.isLoggedIn}>
-        <LoginButton />
+       
+        <LoginButton/>
+
       </When>
 
       <When condition={userContext.isLoggedIn}>
         {/* <LogoutButton /> */}
-      </When>
         <Input fluid
               icon={{ name: 'search', circular: true, link: true }}
               placeholder='Search...'
-            />
+              />
+              </When>
        </Grid.Row>
        </Grid.Column>
       </Grid>
