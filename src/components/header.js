@@ -4,8 +4,6 @@ import LogoImage from './logo/logo.js'
 import './header.css';
 
 
-// import Login from '../context/auth/login.js';
-
 export default function HeaderComponent() {
 
   return (

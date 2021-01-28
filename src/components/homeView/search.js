@@ -1,4 +1,4 @@
-import { Grid, Image, Button, Input } from 'semantic-ui-react'
+import { Grid, Button, Input } from 'semantic-ui-react'
 
 function SearchComponent() {
 

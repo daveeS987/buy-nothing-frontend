@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
+// import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
 import { Grid, Button, Header, Icon } from 'semantic-ui-react';
 import ListItems from '../list/ListItems.js';
 
@@ -9,6 +9,7 @@ import UploadModal from '../uploadPost/uploadModal.js';
 function MyFeedGrid() {
 
   const [view, setView] = useState('myPost');
+  console.log('view', view);
 
   return (
     <>

@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {Provider} from 'react-redux';
 
 import store from './store';
-import Auth from './context/auth/auth.js';
+// import Auth from './context/auth/auth.js';
 import LoginContext from './context/auth/context.js';
 import Main from './pages/main.js';
 

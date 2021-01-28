@@ -1,24 +1,35 @@
-import React from 'react'
-import {Icon, Message, Button } from 'semantic-ui-react'
+import React, { useContext } from 'react'
+import { Message} from 'semantic-ui-react'
+import {  When } from 'react-if';
 
 import LogoutButton from '../../context/authO/authOlogout';
-
 import LoginButton from '../../context/authO/authOlogin'
 
+import {LoginContext} from '../../context/auth/context.js';
 
+function Avatar(){
 
-const Avatar = () => (
-  <>
-    <Message
-      icon='user circle outline'
-      header='Welcome back, Brook Riggio!'
-      content='Current Location: Seattle'
-    />
-    <LoginButton />
-    <LogoutButton />
-    {/* <Button>GUEST</Button>
-    <Button>SIGN UP</Button> */}
-  </>
-)
+  let userContext = useContext(LoginContext);
+
+  let message = userContext.isLoggedIn ? `Welcome Back ${userContext.userName}!` : 'Welcome! Please Sign In'
+
+  return (
+    <>
+      <Message
+        icon='user circle outline'
+        header={message}
+      />
+
+      <When condition={!userContext.isLoggedIn}>
+        <LoginButton />
+      </When>
+
+      <When condition={userContext.isLoggedIn}>
+        <LogoutButton />
+      </When>
+    </>
+  )
+} 
 
 export default Avatar;
+

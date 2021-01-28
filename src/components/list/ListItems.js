@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react';
-import {useDispatch, useSelector } from 'react-redux';
+// import React, {useState, useEffect, useContext} from 'react';
+import { useSelector } from 'react-redux';
 
 import {Grid, Pagination} from 'semantic-ui-react'
 import ListCard from './listcard.js'

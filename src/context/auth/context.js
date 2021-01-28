@@ -9,20 +9,36 @@ function LoginProvider(props) {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  const [userName, setUserName] = useState('');
 
-  const login = async (input) => {
+  /*
+    user will have the following properties:
+
+    username: 
+    userEmail: 
+    userPicture: picture url
+    role: 
+    permissions: 
+    myListings: 
+    followedListings: 
+    mongoId: 
+
+  */
+
+  const login = async (input1, input2, input3) => {
+
+    // *** If api is having issues check .env to see if its using localhost or deployed backend
     const API = process.env.REACT_APP_API;
-    const LocalHost = 'http://localhost:5000';
 
     try {
 
-      const response = await superagent.post(`${LocalHost}/authZero`).send({email:input})
+      const response = await superagent.post(`${API}/authZero`).send({email:input1, name:input2, picture:input3})
 
-      console.log('Login response came back from API');
-      const {user} = response.body;
+      console.log('Login got triggered and came back with response from API');
+      // const {user} = response.body;
       const {token} = response.body;
 
-      validateToken(token, user);
+      validateToken(token);
 
     } catch(e) {
       console.warn('Login Attempt Failed');
@@ -30,18 +46,20 @@ function LoginProvider(props) {
   }
 
 
-  const validateToken = (token, validUser) => {
+  const validateToken = (token) => {
 
     try {
       let tokenUser = jwt.verify(token, process.env.REACT_APP_SECRET)
 
-      // if we're here, the token was good
-      setIsLoggedIn(true);
-      setUser(validUser)
-      // console.log(validUser)
-      // console.log('tokenUser-------', tokenUser);
+      if(tokenUser.username) {
+        setIsLoggedIn(true);
+        console.log('isLogged in turned to true');
+      }
+      setUser(tokenUser)
+      setUserName(tokenUser.username)
+      console.log('user object that is set in context:', tokenUser);
       cookie.save('auth', token);
-      console.log('Token has been validated');
+      console.log('Token has been Validated');
       // set a cookie so that we can stay logged in
       // Optionally, make it only last 1 hour or until you close
     } catch(e) {
@@ -61,6 +79,8 @@ function LoginProvider(props) {
     })
   }
 
+  
+
   const logout = () => {
     setIsLoggedIn(false);
     setUser({});
@@ -74,7 +94,7 @@ function LoginProvider(props) {
 
   return (
     <LoginContext.Provider
-      value={ {isLoggedIn, user, login, logout, guestLogin} }
+      value={ {isLoggedIn, user, userName, login, logout, guestLogin} }
     >
       {props.children}
     </LoginContext.Provider>
