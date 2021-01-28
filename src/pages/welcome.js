@@ -45,13 +45,17 @@ function WelcomePage() {
 
     <Grid.Column >
     </Grid.Column>
+
     <Grid.Column >
       
     <LoginButton />
+
     </Grid.Column>
+
     <Grid.Column >
-      
-    <LogoutButton />
+      {/* add sign up  */}
+    <LogoutButton /> 
+
     </Grid.Column>
     <Grid.Column >
       
