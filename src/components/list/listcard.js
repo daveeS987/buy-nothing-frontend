@@ -11,21 +11,21 @@ function ListCard (props){
       <Grid.Row columns={2}>
         <Grid.Column width="8" >
 
-        <Image size='medium' src={props.item.imageUrl} wrapped ui={true} />
+        <Image size='large' src={props.item.imageUrl} wrapped ui={true} style={{ margin: "1rem", textAlign: "center"}} rounded />
         </Grid.Column>
 
         <Grid.Column width="8" >
           <Card.Content style={{
-            textAlign: "left"
-
+            textAlign: "center", 
+            marginTop: "2rem", 
+            marginBottom: "2rem"
             }}>
-            <Card.Header>{props.item.title}</Card.Header>
-            <Card.Meta >{props.item.location}</Card.Meta>
-            <Card.Description>
-            {/* This makes the cards feel busy to me? Idk.  whatever you guys think. --Ryan{props.item.description} */}
-            </Card.Description>
+            <Card.Header as='h1'>{props.item.title}</Card.Header>
+            <Card.Header as='h4'>Location: {props.item.location}</Card.Header>
+            <Card.Header as='h5'>Posted By: {props.item.creatorUserName}</Card.Header>
+
             
-            <ListModal object={props.item}/>
+            <ListModal object={props.item} style={{ marginBottom: "5rem", }}/>
           </Card.Content>
         </Grid.Column>
       </Grid.Row>

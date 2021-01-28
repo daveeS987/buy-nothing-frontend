@@ -2,6 +2,7 @@ import React, {  useState, useContext } from "react";
 import {useDispatch } from 'react-redux';
 import { Modal, Button, Form, Message, Icon} from 'semantic-ui-react';
 import axios from "axios";
+import {If, Then, Else} from 'react-if'
 
 
 import {addListing} from '../../store/listings.js';
@@ -16,14 +17,12 @@ const Upload = () => {
   const [error, setError] = useState(false);
   const [imgData, setImgData] = useState(null);
   const [isUploaded, setisUploaded] = useState(false);
+  const [formItems, setFormItems ] = useState({});
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const [formItems, setFormItems ] = useState({});
-
-
-  console.log(formItems);
+  // console.log(formItems);
   
   const handleChange = (e) => {
     let newItems = {
@@ -88,6 +87,9 @@ const Upload = () => {
     console.log('output line 84', output);
     dispatch(addListing(output));
     handleClose();
+    setisUploaded(false)
+    setImgData(null);
+    setImage(null);
   }
 
   const fileData = () => {
@@ -105,7 +107,7 @@ const Upload = () => {
   const preUploadImg = () => {
     if (image)
       return (
-          <img id="target" src={image} style={{width:'300px', height:'300px'}} /> 
+          <img id="target" src={image} style={{width:'300px', height:'300px'} } /> 
       );
 
     return null;
@@ -131,12 +133,12 @@ const Upload = () => {
       <Modal 
         open={show}  
         onClose={handleClose}
-        trigger={<Button onClick={handleShow}>Create New Post</Button>}
+        trigger={<Button basic color='teal' onClick={handleShow}>Create New Post</Button>}
         >
         <Modal.Content >
           <Modal.Description>Upload Image</Modal.Description>
         </Modal.Content>
-        <Modal.Content>
+        <Modal.Content style={{textAlign: "center"}}>
           <form onSubmit={uploadHandler}>
 
             <div >
@@ -148,18 +150,19 @@ const Upload = () => {
                   type="file"
                   onChange={(e) => preUploadImgHandler(e)}
                   id="image"
+                  className="ui button customButton"
                 />
 
                 <label htmlFor="image">
-                  {image ? fileData() : "Choose File"}
+                  {image ? fileData() : ""}
                 </label>
               </div>
             </div>
-
-            <button type="submit">
-              UPLOAD IMAGE
-            </button>
-
+            {!isUploaded ? 
+                <button className="ui button customButton" type="submit" style={{backgroundColor:'#008080'}}>
+                  UPLOAD IMAGE
+                </button> 
+                 : ""}
             <div>
               {image ? uploadComplete() : ""}
             </div>
@@ -176,21 +179,44 @@ const Upload = () => {
         <Modal.Content>
           <Form>
             
-            <Form.Input fluid name='title' label='Item Title' placeholder='Item Title' onChange={handleChange}/>
+            <Form.Input fluid name='title' label='Item Title' placeholder='Item Title' required='true' onChange={handleChange}/>
 
-            <Form.Input fluid name='location' label='Location' placeholder='Location' onChange={handleChange}/>
+            <Form.Input fluid name='location' label='Location' placeholder='Location' required='true' onChange={handleChange}/>
 
-            <Form.Input fluid name='categories' label='categories' placeholder='categories' onChange={handleChange}/>
-            
-            <Form.TextArea name='description' label='Description' placeholder='Item Description...' onChange={handleChange}/>
+            <Form.Field fluid name='categories' label='categories' control='select' required='true' onChange={handleChange}>
+                <option value='Appliances'>Appliances</option>
+                <option value='Books'>Books</option>
+                <option value='Clothes'>Clothes</option>
+                <option value='Electronics'>Electronics</option>
+                <option value='Furniture'>Furniture</option>
+                <option value='General'>General</option>
+                <option value='Household'>Household</option>
+                <option value='Music'>Music</option>
+                <option value='Real Estate'>Real Estate</option>
+                <option value='Sports'>Sports</option>
+                <option value='Tools'>Tools</option>
+                <option value='Vehicles'>Vehicles</option>
+
+              </Form.Field>     
+                     
+            <Form.TextArea name='description' label='Description' placeholder='Item Description...' required='true' onChange={handleChange}/>
 
           </Form>
         </Modal.Content>
 
         <Modal.Actions>
-          <Button onClick={submitHandler}>
-            SUBMIT
-          </Button>
+          <If condition={!isUploaded}>
+            <Then>
+              <Button>
+                Please Upload Image
+              </Button>
+            </Then>
+          <Else>
+            <Button onClick={submitHandler}>
+              SUBMIT
+            </Button>
+          </Else>
+          </If>
           <Button onClick={handleClose}>
             CANCEL
           </Button>

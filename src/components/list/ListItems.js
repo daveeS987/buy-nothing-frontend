@@ -1,14 +1,105 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { useSelector } from 'react-redux';
-
 import {Grid, Pagination} from 'semantic-ui-react'
 
 import ListCard from './listcard.js'
+import {LoginContext} from '../../context/auth/context.js';
 
+function ListItems (props){
 
-function ListItems (){
-
+  const userContext = useContext(LoginContext);
   let listings = useSelector(state => state.listings)
+  let category = useSelector(state => state.category)
+  let filteredList = [...listings];
+
+  if(category) {
+
+    switch(category) {
+
+      case 'myPost':
+        filteredList = listings.filter( list => {
+          return list.creatorUserId === userContext.user.mongoId;
+        })
+        break;
+
+      case 'clothes':
+        filteredList = listings.filter( list => {
+          return list.categories === 'clothes';
+        })
+        break;
+
+      case 'electronics':
+        filteredList = listings.filter( list => {
+          return list.categories === 'electronics';
+        })
+        break;
+
+      case 'furniture':
+        filteredList = listings.filter( list => {
+          return list.categories === 'furniture';
+        })
+        break;
+
+        case 'sports':
+          filteredList = listings.filter( list => {
+            return list.categories === 'sports';
+          })
+        break;
+
+        case 'books':
+          filteredList = listings.filter( list => {
+            return list.categories === 'books';
+          })
+        break;
+
+        case 'appliances':
+          filteredList = listings.filter( list => {
+            return list.categories === 'appliances';
+          })
+        break;
+
+        case 'general':
+          filteredList = listings.filter( list => {
+            return list.categories === 'general';
+          })
+        break;
+
+        case 'vehicles':
+          filteredList = listings.filter( list => {
+            return list.categories === 'vehicles';
+          })
+        break;
+
+        case 'household':
+          filteredList = listings.filter( list => {
+            return list.categories === 'household';
+          })
+        break;
+
+        case 'music':
+          filteredList = listings.filter( list => {
+            return list.categories === 'music';
+          })
+        break;
+
+        case 'tools':
+          filteredList = listings.filter( list => {
+            return list.categories === 'tools';
+          })
+        break;
+
+        case 'realestate':
+          filteredList = listings.filter( list => {
+            return list.categories === 'realestate';
+          })
+        break;
+
+      default:
+        console.log('default got targeted');
+    }
+  }
+
+
   let itemsPerPage = 5;
 
 
@@ -18,13 +109,15 @@ function ListItems (){
   const [pageArray, setTempArray] = useState([])
 
   useEffect ( () => {
-    let initial = itemPagina(listings, page)
+    let initial = itemPagina(filteredList, page)
     setTempArray(initial);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[listings]);
 
   useEffect ( () => {
-    let clickedPage = itemPagina(listings, page)
+    let clickedPage = itemPagina(filteredList, page)
     setTempArray(clickedPage);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[page]);
 
   function itemPagina(objArr, page){
@@ -56,10 +149,9 @@ function ListItems (){
   return(
     <Grid>
       <Grid.Row columns={1}>
-        <Grid.Column textAlign="center" width="12" style={{
+        <Grid.Column textAlign="center" style={{
           margin : "auto"
           }}verticalAlign>
-
           {
             pageArray.map(item => {
               return (
@@ -67,10 +159,8 @@ function ListItems (){
               )
             })
           }
-  
         </Grid.Column>
       </Grid.Row>
-
       <Grid.Row columns={1}>
         <Grid.Column textAlign="center" width="12" style={{
           margin : "auto"
@@ -78,10 +168,10 @@ function ListItems (){
           <PaginationButtons/>
         </Grid.Column>
       </Grid.Row>
-
     </Grid>
-  
   );
 }
-
 export default ListItems
+
+
+
