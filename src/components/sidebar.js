@@ -2,6 +2,7 @@ import { Icon, Menu, Sidebar,} from 'semantic-ui-react'
 
 export default function SidebarComponent(props) {
 
+
   return (
     <>
       <Sidebar
