@@ -14,11 +14,11 @@ function HomeGrid() {
           <Grid.Row>
           </Grid.Row>
           {/* LEFT COLUMN */}
-          <Grid.Column width={5} style={{border: "3px solid pink", height: "100%"}}>
+          <Grid.Column width={5} style={{height: "100%"}}>
           </Grid.Column>
 
           {/* CENTER COLUMN */}
-          <Grid.Column centered width={7} style={{border: "3px solid orange", height: "100%"}}>
+          <Grid.Column centered width={7} style={{ height: "100%"}}>
 
             <SearchComponent/>
             <ListItem />
@@ -26,7 +26,7 @@ function HomeGrid() {
           </Grid.Column>
 
           {/* RIGHT COLUMN */}
-          <Grid.Column width={4} style={{border: "3px solid yellow", height: "100%"}} >
+          <Grid.Column width={4} style={{ height: "100%"}} >
           </Grid.Column>
 
       </Grid>

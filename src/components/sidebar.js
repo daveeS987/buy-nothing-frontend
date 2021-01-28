@@ -24,16 +24,16 @@ export default function SidebarComponent(props) {
         width='thin'
       >
         <Menu.Item as='a' onClick={() => props.changeView('home')}>
-          <Icon name='home' />
+          <Icon color="teal" name='home' />
           Home
         </Menu.Item>
 
         <Menu.Item as='a' onClick={() => props.changeView('myFeed')}>
-          <Icon name='comments outline' />
+          <Icon color="teal" name='comments outline' />
           My Feed
         </Menu.Item>
         <Menu.Item as='a' onClick={handleLogOut}>
-          <Icon name='log out' />
+          <Icon color="teal" name='log out' />
           Log Out
         </Menu.Item>
       </Sidebar>
