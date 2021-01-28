@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { Grid } from 'semantic-ui-react'
 
 import ListItem from '../list/ListItems';
@@ -8,12 +8,6 @@ import SearchComponent from './search.js';
 
 function HomeGrid() {
 
-  let currentCategory = useSelector(state => state.category)
-  console.log('currentCategory:', currentCategory);
-
-  // useEffect(() => {
-  //   console.log('Current category got rerendered')
-  // }, [currentCategory])
 
   return (
     <>

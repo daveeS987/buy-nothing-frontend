@@ -107,7 +107,7 @@ const Upload = () => {
   const preUploadImg = () => {
     if (image)
       return (
-          <img id="target" src={image} style={{width:'300px', height:'300px'}} /> 
+          <img id="target" src={image} style={{width:'300px', height:'300px'} } /> 
       );
 
     return null;
@@ -158,7 +158,7 @@ const Upload = () => {
                 </label>
               </div>
             </div>
-            {imgData ? 
+            {!isUploaded ? 
                 <button className="ui button customButton" type="submit" style={{backgroundColor:'#008080'}}>
                   UPLOAD IMAGE
                 </button> 
@@ -183,8 +183,22 @@ const Upload = () => {
 
             <Form.Input fluid name='location' label='Location' placeholder='Location' required='true' onChange={handleChange}/>
 
-            <Form.Input fluid name='categories' label='categories' placeholder='categories'required='true' onChange={handleChange}/>
-            
+            <Form.Field fluid name='categories' label='categories' control='select' required='true' onChange={handleChange}>
+                <option value='Appliances'>Appliances</option>
+                <option value='Books'>Books</option>
+                <option value='Clothes'>Clothes</option>
+                <option value='Electronics'>Electronics</option>
+                <option value='Furniture'>Furniture</option>
+                <option value='General'>General</option>
+                <option value='Household'>Household</option>
+                <option value='Music'>Music</option>
+                <option value='Real Estate'>Real Estate</option>
+                <option value='Sports'>Sports</option>
+                <option value='Tools'>Tools</option>
+                <option value='Vehicles'>Vehicles</option>
+
+              </Form.Field>     
+                     
             <Form.TextArea name='description' label='Description' placeholder='Item Description...' required='true' onChange={handleChange}/>
 
           </Form>
