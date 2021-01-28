@@ -6,7 +6,7 @@ const LogoutButton = () => {
   const { logout } = useAuth0();
 
   function handleLogOut() {
-    logout({ returnTo: `${process.env.REACT_APP_REDIRECT}/welcome` })
+    logout({ returnTo: `${process.env.REACT_APP_REDIRECT}` })
     cookie.remove('auth');
   }
 
