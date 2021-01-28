@@ -1,14 +1,32 @@
 import { Icon, Menu, Sidebar, Segment} from 'semantic-ui-react'
+import { useDispatch } from 'react-redux';
 import { useAuth0 } from "@auth0/auth0-react";//
 import cookie from 'react-cookies';
 
+import {changeCategory} from '../store/category.js';
+import {getListings} from '../store/listings.js';
+
 export default function SidebarComponent(props) {
+
+const dispatch = useDispatch()
   
   const { logout } = useAuth0();
 
   function handleLogOut() {
     logout({ returnTo: `${process.env.REACT_APP_REDIRECT}` })
     cookie.remove('auth');
+  }
+
+  function handleMyFeedButton() {
+    props.changeView('myFeed');
+    dispatch(changeCategory('myPost'))
+    dispatch(getListings())
+  }
+
+  function handleHomeButton() {
+    props.changeView('home');
+    dispatch(changeCategory(null))
+    dispatch(getListings())
   }
 
 
@@ -23,12 +41,12 @@ export default function SidebarComponent(props) {
         visible
         width='thin'
       >
-        <Menu.Item as='a' onClick={() => props.changeView('home')}>
+        <Menu.Item as='a' onClick={handleHomeButton}>
           <Icon color="teal" name='home' />
           Home
         </Menu.Item>
 
-        <Menu.Item as='a' onClick={() => props.changeView('myFeed')}>
+        <Menu.Item as='a' onClick={handleMyFeedButton}>
           <Icon color="teal" name='comments outline' />
           My Feed
         </Menu.Item>
