@@ -17,9 +17,11 @@ function ListItems (props){
   let category = useSelector(state => state.category)
   let filteredList = [...listings];
 
-  useEffect(() => {
-    console.log('category got changed')
-  }, [filteredList])
+  console.log('line 20', category);
+
+  // useEffect(() => {
+  //   console.log('category got changed')
+  // }, [filteredList])
 
   if(category) {
 

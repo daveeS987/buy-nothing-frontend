@@ -17,9 +17,6 @@ export default function reducer( state = intialState, action) {
     case "GETLISTINGS":
       return payload;
 
-    case "FILTERLISTINGS":
-      return payload;
-
     default:
       return state;
   }
@@ -38,16 +35,6 @@ export const getListings = () => async dispatch => {
     payload: listings.data.results
   })
 }
-
-// export function filterListings (state, category) {
-  
-// //insert filter logic here
-
-//   return{
-//     type: 'FILTERLISTINGS',
-//     payload: listings.data.results
-//   }
-// }
 
 
 export const addListing = (payload) => async dispatch => {
