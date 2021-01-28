@@ -11,6 +11,7 @@ export default function SidebarComponent(props) {
     cookie.remove('auth');
   }
 
+
   return (
     <>
       {/* <Sidebar.Pushable as={Segment}> */}
