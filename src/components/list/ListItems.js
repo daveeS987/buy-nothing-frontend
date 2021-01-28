@@ -1,11 +1,14 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { useSelector } from 'react-redux';
 import {Grid, Pagination} from 'semantic-ui-react'
+
 import ListCard from './listcard.js'
 function ListItems (){
 
   let listings = useSelector(state => state.listings)
   let itemsPerPage = 5;
+
+
 // *************** Pagination Logic ********************//
 //************this is horrible hot garbage**************//
   const [page, setPage] = useState(1);
@@ -22,9 +25,11 @@ function ListItems (){
     let tempArr = objArr.slice((page*itemsPerPage)-itemsPerPage, page*itemsPerPage);
     return(tempArr);
   };
+
   function setPageNum(e, {activePage}){
     setPage(activePage);
   }
+
   const PaginationButtons = () => (
     <Pagination
       activePage={page}
@@ -36,8 +41,12 @@ function ListItems (){
       totalPages={listings.length/5}
     />
   )
+
+
 // *************** Pagination Logic ********************//
 //********if John Cokos asks Davee wrote this^^^********//
+
+
   return(
     <Grid>
       <Grid.Row columns={1}>

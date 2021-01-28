@@ -11,12 +11,12 @@ function HomeGrid() {
   return (
     <>
       <Grid>
-
+      
           <Grid.Column width={5}>
           </Grid.Column>
 
           <Grid.Column centered width={6}>
-            <SearchComponent/>
+          <SearchComponent/>
             <ListItem />
           </Grid.Column>
 
