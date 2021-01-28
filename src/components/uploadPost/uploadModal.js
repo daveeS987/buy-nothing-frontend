@@ -17,14 +17,12 @@ const Upload = () => {
   const [error, setError] = useState(false);
   const [imgData, setImgData] = useState(null);
   const [isUploaded, setisUploaded] = useState(false);
+  const [formItems, setFormItems ] = useState({});
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const [formItems, setFormItems ] = useState({});
-
-
-  console.log(formItems);
+  // console.log(formItems);
   
   const handleChange = (e) => {
     let newItems = {
