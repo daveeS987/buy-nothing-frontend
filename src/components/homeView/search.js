@@ -7,9 +7,9 @@ function SearchComponent() {
 
       <Grid>
 
-        <Grid.Row columns={3} style={{border: "3px dashed purple", height: "100%"}} >
+        <Grid.Row columns={3} style={{ border: "1px dashed red", height: "100%"}} >
 
-          <Grid.Column style={{border: "3px dashed green", height: "100%"}}>
+          <Grid.Column >
 
           </Grid.Column>
 
@@ -20,41 +20,35 @@ function SearchComponent() {
             /> */}
           {/* </Grid.Column> */}
 
-          <Grid.Column style={{border: "3px dashed green", height: "100%"}} >
+          <Grid.Column >
 
           </Grid.Column>
         </Grid.Row >
 
-          
-        <Grid.Row style={{border: "3px dashed red", height: "100%", textAlign: "center"}}> 
+        <Grid.Row style={{height: "100%", textAlign: "center"}}> 
         
+        <Grid.Column>
 
-        <Button.Group basic>
+        <Button.Group>
 
-          <Button>Clothes</Button>
-
-
-          <Button>Furniture</Button>
+          <Button basic color='teal'>Clothes</Button>
 
 
-          {/* <Button>Children</Button> */}
+          <Button basic color='pink'>Furniture</Button>
 
+          <Button basic color='blue'>Sports</Button>
 
-          <Button>Sports</Button>
+          <Button basic color='pink'>Books</Button>
+          <Button basic color='teal'>Appliances</Button>
 
+          <Button basic color='blue'>Electronics</Button>
+          <Button basic color='pink'>Auto</Button>
 
-          {/* <Button>Shoes</Button> */}
+          <Button basic color='teal'>Music  </Button>
 
-          <Button>Books</Button>
-          <Button>Appliances</Button>
-
-          <Button>Electronics</Button>
-          <Button>Auto</Button>
-
-          <Button >Music  </Button>
         </Button.Group>
           
-       
+        </Grid.Column>
         </Grid.Row >
       </Grid>
 

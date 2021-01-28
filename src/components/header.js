@@ -9,7 +9,7 @@ export default function HeaderComponent() {
   return (
 
     <Grid columns={5} >
-      <Grid.Row >
+      <Grid.Row style={{ height:"150%", display: "block", padding: "1em" }}>
 
         {/* COLUMN ONE */}
       <Grid.Column >
@@ -28,7 +28,7 @@ export default function HeaderComponent() {
       </Grid.Column>
 
        {/* COLUMN THREE */}
-      <Grid.Column >
+      <Grid.Column style={{ height:"150%" }} >
 
       <LogoImage/>
 
