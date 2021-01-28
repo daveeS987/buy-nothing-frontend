@@ -13,7 +13,7 @@ const ListModal = (props) => {
       onOpen={() => setOpen(true)}
 
   
-      trigger={<Button>More Details</Button>}
+      trigger={<Button>Details</Button>}
 
       >
 

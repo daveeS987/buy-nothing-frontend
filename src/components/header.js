@@ -8,18 +8,17 @@ export default function HeaderComponent() {
 
   return (
 
-    <Grid columns={5} style={{border: "3px solid green", height: "100%"}} >
-      <Grid.Row >
+    <Grid columns={5} >
+      <Grid.Row style={{ height:"150%", display: "block", padding: "1em" }}>
 
         {/* COLUMN ONE */}
       <Grid.Column >
         {/* divs for seeing the grid */}
-      <div style={{border: "3px solid red", height: "100%"}}></div>
       </Grid.Column>
 
          {/* COLUMN TWO */}
       <Grid.Column >
-      <div style={{border: "3px solid blue", height: "100%"}}></div>
+      
 
 
         {/* <Header as='h2' icon textAlign='center'>
@@ -29,9 +28,7 @@ export default function HeaderComponent() {
       </Grid.Column>
 
        {/* COLUMN THREE */}
-      <Grid.Column >
-      <div style={{ border: "3px solid blue" }}>
-      </div>
+      <Grid.Column style={{ height:"150%" }} >
 
       <LogoImage/>
 
@@ -42,7 +39,6 @@ export default function HeaderComponent() {
 
       {/* COLUMN FOUR */}
       <Grid.Column >
-            <div style={{border: "3px solid blue", height: "100%"}}></div>
 
               <Header as='h2' icon textAlign='center'>
 
@@ -51,8 +47,7 @@ export default function HeaderComponent() {
 
 
       {/* COLUMN FIVE */}
-      <Grid.Column >
-      <div style={{border: "3px solid red"}}></div>  
+      <Grid.Column > 
         <Avatar />
         {/* <Login /> */}
       </Grid.Column>

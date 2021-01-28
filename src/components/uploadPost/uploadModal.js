@@ -131,7 +131,7 @@ const Upload = () => {
       <Modal 
         open={show}  
         onClose={handleClose}
-        trigger={<Button onClick={handleShow}>Create New Post</Button>}
+        trigger={<Button basic color='teal' onClick={handleShow}>Create New Post</Button>}
         >
         <Modal.Content >
           <Modal.Description>Upload Image</Modal.Description>

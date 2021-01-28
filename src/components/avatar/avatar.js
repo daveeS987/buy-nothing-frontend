@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'// bring this in
-import { Message, Card, Feed, Image, Grid, Row, Column} from 'semantic-ui-react'
+import { Message, Card, Feed, Image, Grid, Row, Column, Input, Container } from 'semantic-ui-react'
 import {  When } from 'react-if';
 
 import LogoutButton from '../../context/authO/authOlogout';// bring in
@@ -15,25 +15,49 @@ function Avatar(){
 
   console.log('usercontext.user', userContext.user)
 
-  let message = userContext.isLoggedIn ? `Welcome Back ${userContext.userName}!` : 'Welcome! Please Sign In'
+  let message = userContext.isLoggedIn ? `Welcome, ${userContext.userName}!` : 'Welcome! Please Sign In'
 
   return (
     <>
 
+      <Grid>
+        <Grid.Column>
+          {/* IMAGE ROW */}
+        <Grid.Row  style={{ height:"60%", display: "block", padding: "1em" }} >
+          {/* <div style={{ width: "100%", display: "block" }}>
+          </div> */}
+      <Image style={{ display: "block", padding: "1.5em" }} src={userImageUrl} size='small' centered circular />
+        </Grid.Row>
+        <Grid.Row >
 
-      <Image src={userImageUrl} size='small' centered circular />
-      <Message header={message} size="mini" />
+        </Grid.Row>
+
+          {/* WELCOME */}
+        <Grid.Row style={{ textAlign: "center", paddingRight: "2em"}}  >  
+      {/* <Message info header={message} size="mini" /> */}
+      <Container textAlign='center' style={{ display: "block", padding: "1em" }}>
+    <p>
+      {message}
+    </p>
+      
+  </Container>
+
       <When condition={!userContext.isLoggedIn}>
-        <LoginButton />
+       
+        <LoginButton/>
+
       </When>
 
       <When condition={userContext.isLoggedIn}>
         {/* <LogoutButton /> */}
-      </When>
-        {/* <Input
+        <Input fluid
               icon={{ name: 'search', circular: true, link: true }}
               placeholder='Search...'
-            /> */}
+              />
+              </When>
+       </Grid.Row>
+       </Grid.Column>
+      </Grid>
     </>
   )
 } 
