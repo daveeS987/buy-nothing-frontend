@@ -184,18 +184,18 @@ const Upload = () => {
             <Form.Input fluid name='location' label='Location' placeholder='Location' required='true' onChange={handleChange}/>
 
             <Form.Field fluid name='categories' label='categories' control='select' required='true' onChange={handleChange}>
-                <option value='Appliances'>Appliances</option>
-                <option value='Books'>Books</option>
-                <option value='Clothes'>Clothes</option>
-                <option value='Electronics'>Electronics</option>
-                <option value='Furniture'>Furniture</option>
-                <option value='General'>General</option>
-                <option value='Household'>Household</option>
-                <option value='Music'>Music</option>
-                <option value='Real Estate'>Real Estate</option>
-                <option value='Sports'>Sports</option>
-                <option value='Tools'>Tools</option>
-                <option value='Vehicles'>Vehicles</option>
+                <option value='appliances'>Appliances</option>
+                <option value='books'>Books</option>
+                <option value='clothes'>Clothes</option>
+                <option value='electronics'>Electronics</option>
+                <option value='furniture'>Furniture</option>
+                <option value='general'>General</option>
+                <option value='household'>Household</option>
+                <option value='music'>Music</option>
+                <option value='realestate'>Real Estate</option>
+                <option value='sports'>Sports</option>
+                <option value='tools'>Tools</option>
+                <option value='vehicles'>Vehicles</option>
 
               </Form.Field>     
                      

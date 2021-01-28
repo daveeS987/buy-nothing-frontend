@@ -1,5 +1,4 @@
 import LoginButton from '../context/authO/authOlogin.js';
-import LogoutButton from '../context/authO/authOlogout.js';
 import { Grid } from 'semantic-ui-react'
 import LogoImage from '../components/logo/logo.js'
 
