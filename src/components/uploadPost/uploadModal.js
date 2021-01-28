@@ -99,10 +99,11 @@ const Upload = () => {
 
             <div >
               <div >
-                <input
+                <input 
                   type="file"
                   onChange={(e) => setImage(e.target.files[0])}
                   id="image"
+                  className="ui button customButton"
                 />
 
                 <label htmlFor="image">
@@ -111,7 +112,7 @@ const Upload = () => {
               </div>
             </div>
 
-            <button type="submit">
+            <button className="ui button customButton" type="submit">
               UPLOAD IMAGE
             </button>
 

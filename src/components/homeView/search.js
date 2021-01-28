@@ -7,16 +7,27 @@ function SearchComponent() {
 
       <Grid>
 
-        <Grid.Row columns={3}>
-          <Grid.Column></Grid.Column>
-          <Grid.Column>
-            <Input
+        <Grid.Row columns={3} style={{border: "3px dashed purple", height: "100%"}} >
+
+          <Grid.Column style={{border: "3px dashed green", height: "100%"}}>
+
+          </Grid.Column>
+
+          <Grid.Column >
+            {/* <Input
               icon={{ name: 'search', circular: true, link: true }}
               placeholder='Search...'
-            />
+            /> */}
           </Grid.Column>
-          <Grid.Column></Grid.Column>
-        </Grid.Row>
+
+          <Grid.Column style={{border: "3px dashed green", height: "100%"}} >
+
+          </Grid.Column>
+        </Grid.Row >
+
+          
+        <Grid.Row style={{border: "3px dashed red", height: "100%"}}> 
+        
 
         <Button.Group basic>
 
@@ -36,7 +47,9 @@ function SearchComponent() {
 
 
           <Button>Electronics</Button>
+        </Button.Group>
 
+        <Button.Group>
           <Button>Books</Button>
 
           <Button>Crafts</Button>
@@ -48,9 +61,10 @@ function SearchComponent() {
           <Button>Auto</Button>
 
           <Button >Music  </Button>
-        </Button.Group>
-
-
+          </Button.Group>
+          
+       
+        </Grid.Row >
       </Grid>
 
     </>
