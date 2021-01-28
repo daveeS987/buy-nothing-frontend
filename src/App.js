@@ -16,11 +16,11 @@ function App() {
         <Router>
             <Switch>
 
-              <Route exact path='/'>
+              <Route exact path='/main'>
                 <Main/>
               </Route>
 
-              <Route exact path='/welcome'>
+              <Route exact path='/'>
                 <Welcome />
               </Route>
 
