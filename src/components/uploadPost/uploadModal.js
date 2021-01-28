@@ -1,6 +1,6 @@
 import React, {  useState, useContext } from "react";
 import {useDispatch } from 'react-redux';
-import { Modal, Button, Form } from 'semantic-ui-react';
+import { Modal, Button, Form, Message, Icon} from 'semantic-ui-react';
 import axios from "axios";
 
 
@@ -15,6 +15,8 @@ const Upload = () => {
   // const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
+  const [imgData, setImgData] = useState(null);
+  const [isUploaded, setisUploaded] = useState(false);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -37,8 +39,8 @@ const Upload = () => {
 
     try {
       const formData = new FormData();
-
-      formData.append("picture", image, image.name);
+      console.log('img line 41', imgData)
+      formData.append("picture", imgData, imgData.name);
       // formData.append("desc", description);
 
       let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v1/imghandler/upload', formData);
@@ -46,12 +48,27 @@ const Upload = () => {
       console.log('res.data.createdImage.url:', res.data.createdImage.url)
       setFormItems({...formItems, imageUrl: res.data.createdImage.url})
 
+
       setError(false);
+      setisUploaded(true);
     } catch (error) {
       setError(true);
       console.error(error);
     }
   };
+
+  const preUploadImgHandler = async(e) => {
+    setImgData(e.target.files[0])
+    console.log('img line 61', imgData)
+    if(e.target.files && e.target.files[0]){
+      let reader = new FileReader()
+      reader.onload = (e) =>{
+        console.log({image: e.target.result})
+      setImage(e.target.result)
+    }
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  }
 
 
   const submitHandler = async(e) => {
@@ -82,6 +99,28 @@ const Upload = () => {
     return null;
   };
 
+  const preUploadImg = () => {
+    if (image)
+      return (
+          <img id="target" src={image} style={{width:'300px', height:'300px'}} /> 
+      );
+
+    return null;
+  };
+
+  const uploadComplete = () => {
+    if (isUploaded)
+      return (
+        <Message>
+        <p>
+        <Icon name='check' />Upload Complete!
+        </p>
+      </Message>
+      );
+
+    return null;
+  };
+
 
   return (
     <>
@@ -99,9 +138,12 @@ const Upload = () => {
 
             <div >
               <div >
+              <div>
+                {image ? preUploadImg() : < img id="placeholderimg" src={'https://via.placeholder.com/300x300?text=Upload+Image'}/>}
+              </div>
                 <input
                   type="file"
-                  onChange={(e) => setImage(e.target.files[0])}
+                  onChange={(e) => preUploadImgHandler(e)}
                   id="image"
                 />
 
@@ -115,10 +157,14 @@ const Upload = () => {
               UPLOAD IMAGE
             </button>
 
+            <div>
+              {image ? uploadComplete() : ""}
+            </div>
+
             {error ? (
               <div >
                 {" "}
-                Some error occured uploading the file{" "}
+                Some error occured uploading the file{`${error}`}
               </div>
             ) : null}
           </form>
