@@ -2,6 +2,7 @@ import React, {  useState, useContext } from "react";
 import {useDispatch } from 'react-redux';
 import { Modal, Button, Form, Message, Icon} from 'semantic-ui-react';
 import axios from "axios";
+import {If, Then, Else} from 'react-if'
 
 
 import {addListing} from '../../store/listings.js';
@@ -86,6 +87,9 @@ const Upload = () => {
     console.log('output line 84', output);
     dispatch(addListing(output));
     handleClose();
+    setisUploaded(false)
+    setImgData(null);
+    setImage(null);
   }
 
   const fileData = () => {
@@ -134,7 +138,7 @@ const Upload = () => {
         <Modal.Content >
           <Modal.Description>Upload Image</Modal.Description>
         </Modal.Content>
-        <Modal.Content>
+        <Modal.Content style={{textAlign: "center"}}>
           <form onSubmit={uploadHandler}>
 
             <div >
@@ -150,15 +154,15 @@ const Upload = () => {
                 />
 
                 <label htmlFor="image">
-                  {image ? fileData() : "Choose File"}
+                  {image ? fileData() : ""}
                 </label>
               </div>
             </div>
-
-            <button className="ui button customButton" type="submit">
-              UPLOAD IMAGE
-            </button>
-
+            {imgData ? 
+                <button className="ui button customButton" type="submit" style={{backgroundColor:'#008080'}}>
+                  UPLOAD IMAGE
+                </button> 
+                 : ""}
             <div>
               {image ? uploadComplete() : ""}
             </div>
@@ -175,21 +179,30 @@ const Upload = () => {
         <Modal.Content>
           <Form>
             
-            <Form.Input fluid name='title' label='Item Title' placeholder='Item Title' onChange={handleChange}/>
+            <Form.Input fluid name='title' label='Item Title' placeholder='Item Title' required='true' onChange={handleChange}/>
 
-            <Form.Input fluid name='location' label='Location' placeholder='Location' onChange={handleChange}/>
+            <Form.Input fluid name='location' label='Location' placeholder='Location' required='true' onChange={handleChange}/>
 
-            <Form.Input fluid name='categories' label='categories' placeholder='categories' onChange={handleChange}/>
+            <Form.Input fluid name='categories' label='categories' placeholder='categories'required='true' onChange={handleChange}/>
             
-            <Form.TextArea name='description' label='Description' placeholder='Item Description...' onChange={handleChange}/>
+            <Form.TextArea name='description' label='Description' placeholder='Item Description...' required='true' onChange={handleChange}/>
 
           </Form>
         </Modal.Content>
 
         <Modal.Actions>
-          <Button onClick={submitHandler}>
-            SUBMIT
-          </Button>
+          <If condition={!isUploaded}>
+            <Then>
+              <Button>
+                Please Upload Image
+              </Button>
+            </Then>
+          <Else>
+            <Button onClick={submitHandler}>
+              SUBMIT
+            </Button>
+          </Else>
+          </If>
           <Button onClick={handleClose}>
             CANCEL
           </Button>
