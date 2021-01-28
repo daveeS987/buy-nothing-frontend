@@ -48,14 +48,14 @@ function WelcomePage() {
 
     <Grid.Column >
       
-    <LoginButton />
+
 
     </Grid.Column>
-
+  
     <Grid.Column >
       {/* add sign up  */}
-    <LogoutButton /> 
 
+      <LoginButton />
     </Grid.Column>
     <Grid.Column >
       
