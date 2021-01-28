@@ -2,10 +2,10 @@ import axios from 'axios';
 
 let API = process.env.REACT_APP_API;
 
-console.log('----------------------------------------------------')
-console.log('This is the current Backened API:', API);
-console.log('If you are developing locally it should be localhost:5000, not heroku');
-console.log('Check your REACT APP .env file')
+// console.log('----------------------------------------------------')
+// console.log('This is the current Backened API:', API);
+// console.log('If you are developing locally it should be localhost:5000, not heroku');
+// console.log('Check your REACT APP .env file')
 
 const intialState = [];
 
@@ -15,6 +15,9 @@ export default function reducer( state = intialState, action) {
   switch(type) {
 
     case "GETLISTINGS":
+      return payload;
+
+    case "FILTERLISTINGS":
       return payload;
 
     default:
@@ -35,6 +38,16 @@ export const getListings = () => async dispatch => {
     payload: listings.data.results
   })
 }
+
+// export function filterListings (state, category) {
+  
+// //insert filter logic here
+
+//   return{
+//     type: 'FILTERLISTINGS',
+//     payload: listings.data.results
+//   }
+// }
 
 
 export const addListing = (payload) => async dispatch => {

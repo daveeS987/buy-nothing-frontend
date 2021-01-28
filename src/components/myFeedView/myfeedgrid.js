@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import {useDispatch} from 'react-redux';
 import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
 import { Grid, Button, Header, Icon } from 'semantic-ui-react';
 import ListItems from '../list/ListItems.js';
 
 import UploadModal from '../uploadPost/uploadModal.js';
 
+import {changeCategory} from '../../store/category.js';
 
 function MyFeedGrid() {
+
+  const dispatch = useDispatch()
 
   const [view, setView] = useState('myPost');
   console.log('view----------------------:', view);
@@ -21,14 +25,14 @@ function MyFeedGrid() {
           <Grid.Column></Grid.Column>
 
           <Grid.Column textAlign="center">
-            <Button basic color='teal' onClick={() => setView('myPost')}>
+            <Button basic color='teal' onClick={() => dispatch(changeCategory('myPost'))}>
               My Post
             </Button>
           </Grid.Column>
 
           <Grid.Column textAlign="center">
-            <Button basic color='teal' onClick={() => setView('postImFollowing')}>
-              Posts I'm Following
+            <Button basic color='teal' onClick={() => dispatch(changeCategory('default'))}>
+              All Items
             </Button>
           </Grid.Column>
 
@@ -46,14 +50,14 @@ function MyFeedGrid() {
 
           <Grid.Column centered width={10}>
 
-            <If condition={view==='myPost'}>
-              <Then>
+            {/* <If condition={view==='myPost'}>
+              <Then> */}
                 <ListItems filterBy={'myPost'}/>
-              </Then>
+              {/* </Then>
               <Else>
-                <ListItems filterBy={'postImFollowing'}/>
+                <ListItems/>
               </Else>
-            </If>
+            </If> */}
 
             {/* <ListItems /> */}
           </Grid.Column>

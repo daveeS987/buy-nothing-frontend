@@ -3,9 +3,10 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 
 import listings from './listings.js';
+import category from './category.js';
 
 const reducers = combineReducers({
-  listings
+  listings, category
 });
 
 const store = () => {
