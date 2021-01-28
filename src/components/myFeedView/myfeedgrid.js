@@ -15,10 +15,7 @@ function MyFeedGrid() {
     <>
 
       <Grid>
-        <Header as='h3' icon textAlign='center'>
-          <Icon name='users' circular />
-          <Header.Content>User Avatar</Header.Content>
-        </Header>
+        
 
 
 
@@ -27,13 +24,13 @@ function MyFeedGrid() {
           <Grid.Column></Grid.Column>
 
           <Grid.Column textAlign="center">
-            <Button onClick={() => setView('myPost')}>
+            <Button basic color='teal' onClick={() => setView('myPost')}>
               My Post
             </Button>
           </Grid.Column>
 
           <Grid.Column textAlign="center">
-            <Button onClick={() => setView('imFollowing')}>
+            <Button basic color='teal' onClick={() => setView('imFollowing')}>
               Posts I'm Following
             </Button>
           </Grid.Column>

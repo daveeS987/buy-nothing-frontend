@@ -4,21 +4,22 @@ import LogoImage from './logo/logo.js'
 import './header.css';
 
 
-export default function HeaderComponent() {
+export default function Footer() {
 
   return (
 
-    <Grid columns={5} >
-      <Grid.Row style={{ height:"150%", display: "block", padding: "1em" }}>
+    <Grid columns={5} style={{border: "3px solid green", height: "100%"}} >
+      <Grid.Row >
 
         {/* COLUMN ONE */}
       <Grid.Column >
         {/* divs for seeing the grid */}
+      <div style={{border: "3px solid red", height: "100%"}}></div>
       </Grid.Column>
 
          {/* COLUMN TWO */}
       <Grid.Column >
-      
+      <div style={{border: "3px solid blue", height: "100%"}}></div>
 
 
         {/* <Header as='h2' icon textAlign='center'>
@@ -28,9 +29,11 @@ export default function HeaderComponent() {
       </Grid.Column>
 
        {/* COLUMN THREE */}
-      <Grid.Column style={{ height:"150%" }} >
-
-      <LogoImage/>
+      <Grid.Column >
+      <div style={{ border: "3px solid blue" }}>
+      </div>
+        <h1>Footer</h1>
+      {/* <LogoImage/> */}
 
       {/* <Image src='logo/BNLogo3.svg' fluid /> */}
       
@@ -39,6 +42,7 @@ export default function HeaderComponent() {
 
       {/* COLUMN FOUR */}
       <Grid.Column >
+            <div style={{border: "3px solid blue", height: "100%"}}></div>
 
               <Header as='h2' icon textAlign='center'>
 
@@ -47,8 +51,9 @@ export default function HeaderComponent() {
 
 
       {/* COLUMN FIVE */}
-      <Grid.Column > 
-        <Avatar />
+      <Grid.Column >
+      <div style={{border: "3px solid red"}}></div>  
+        {/* <Avatar /> */}
         {/* <Login /> */}
       </Grid.Column>
 
