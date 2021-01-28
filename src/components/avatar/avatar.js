@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'// bring this in
-import { Message, Card, Feed, Image, Grid, Row, Column} from 'semantic-ui-react'
+import { Message, Card, Feed, Image, Grid, Row, Column, Input} from 'semantic-ui-react'
 import {  When } from 'react-if';
 
 import LogoutButton from '../../context/authO/authOlogout';// bring in
@@ -15,13 +15,20 @@ function Avatar(){
 
   console.log('usercontext.user', userContext.user)
 
-  let message = userContext.isLoggedIn ? `Welcome Back ${userContext.userName}!` : 'Welcome! Please Sign In'
+  let message = userContext.isLoggedIn ? `Welcome, ${userContext.userName}!` : 'Welcome! Please Sign In'
 
   return (
     <>
 
-
+      <Grid>
+        <Grid.Column>
+        <Grid.Row style={{border: "3px dashed purple", height:"60%"}}>
+          {/* <div style={{ width: "100%", display: "block" }}>
+          </div> */}
       <Image src={userImageUrl} size='small' centered circular />
+        </Grid.Row>
+
+        <Grid.Row style={{border: "3px dashed purple"}}>  
       <Message header={message} size="mini" />
       <When condition={!userContext.isLoggedIn}>
         <LoginButton />
@@ -30,10 +37,13 @@ function Avatar(){
       <When condition={userContext.isLoggedIn}>
         {/* <LogoutButton /> */}
       </When>
-        {/* <Input
+        <Input
               icon={{ name: 'search', circular: true, link: true }}
               placeholder='Search...'
-            /> */}
+            />
+       </Grid.Row>
+       </Grid.Column>
+      </Grid>
     </>
   )
 } 

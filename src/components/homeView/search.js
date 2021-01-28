@@ -13,12 +13,12 @@ function SearchComponent() {
 
           </Grid.Column>
 
-          <Grid.Column >
+          {/* <Grid.Column > */}
             {/* <Input
               icon={{ name: 'search', circular: true, link: true }}
               placeholder='Search...'
             /> */}
-          </Grid.Column>
+          {/* </Grid.Column> */}
 
           <Grid.Column style={{border: "3px dashed green", height: "100%"}} >
 
@@ -49,7 +49,7 @@ function SearchComponent() {
           <Button>Electronics</Button>
         </Button.Group>
 
-        <Button.Group>
+        <Button.Group basic >
           <Button>Books</Button>
 
           <Button>Crafts</Button>
