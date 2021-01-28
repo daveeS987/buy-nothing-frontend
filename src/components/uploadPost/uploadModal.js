@@ -12,7 +12,6 @@ const Upload = () => {
   const userContext = useContext(LoginContext);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  // const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
 
@@ -82,6 +81,7 @@ const Upload = () => {
     return null;
   };
 
+  console.log('formItems line 84:', formItems);
 
   return (
     <>
