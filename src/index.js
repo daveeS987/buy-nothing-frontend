@@ -13,7 +13,7 @@ ReactDOM.render(
       <Auth0Provider
         domain="davee1234.us.auth0.com"
         clientId="ZH1REh7iBjpJQZAstfxzYBUQpGFEUIDF"
-        redirectUri={`${process.env.REACT_APP_REDIRECT}`}
+        redirectUri={`${process.env.REACT_APP_REDIRECT}/main`}
       >
       <App />
     </Auth0Provider>

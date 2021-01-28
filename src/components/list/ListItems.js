@@ -9,6 +9,8 @@ function ListItems (){
 
   let listings = useSelector(state => state.listings)
 
+  console.log('listings:', listings);
+
   const PaginationExampleShorthand = () => (
     <Pagination
       defaultActivePage={1}
