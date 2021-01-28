@@ -5,15 +5,15 @@ import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import { Auth0Provider } from "@auth0/auth0-react";
 
-let redirect = process.env.REDIRECT_URI;
-console.log('redirect:', redirect);
+console.log('redirect:', process.env.REACT_APP_REDIRECT)
+
 
 ReactDOM.render(
   <React.StrictMode>
       <Auth0Provider
         domain="davee1234.us.auth0.com"
         clientId="ZH1REh7iBjpJQZAstfxzYBUQpGFEUIDF"
-        redirectUri={'https://buynothing-frontend.netlify.app'}
+        redirectUri={`${process.env.REACT_APP_REDIRECT}`}
       >
       <App />
     </Auth0Provider>

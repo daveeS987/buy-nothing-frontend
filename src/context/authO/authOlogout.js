@@ -6,7 +6,7 @@ const LogoutButton = () => {
   const { logout } = useAuth0();
 
   function handleLogOut() {
-    logout({ returnTo: 'https://buynothing-frontend.netlify.app/welcome' })
+    logout({ returnTo: `${process.env.REACT_APP_REDIRECT}/welcome` })
     cookie.remove('auth');
   }
 
