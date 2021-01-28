@@ -3,9 +3,33 @@ import { useSelector } from 'react-redux';
 import {Grid, Pagination} from 'semantic-ui-react'
 
 import ListCard from './listcard.js'
-function ListItems (){
+import {LoginContext} from '../../context/auth/context.js';
 
+
+
+function ListItems (props){
+
+  const userContext = useContext(LoginContext);
   let listings = useSelector(state => state.listings)
+
+
+  console.log('userContext.user', userContext.user);
+  console.log('listings:', listings);
+  console.log('props', props);
+
+  
+  if(props.filterBy && userContext.user.mongoId) {
+    console.log('props.filterMyFeed:', props.filterBy);
+    let filtered = listings.filter( list => {
+      return list.creatorUserId === userContext.user.mongoId;
+    })
+    console.log('filtered:', filtered);
+  }
+
+
+
+
+
   let itemsPerPage = 5;
 
 
@@ -13,14 +37,17 @@ function ListItems (){
 //************this is horrible hot garbage**************//
   const [page, setPage] = useState(1);
   const [pageArray, setTempArray] = useState([])
+
   useEffect ( () => {
     let initial = itemPagina(listings, page)
     setTempArray(initial);
   },[listings]);
+
   useEffect ( () => {
     let clickedPage = itemPagina(listings, page)
     setTempArray(clickedPage);
   },[page]);
+
   function itemPagina(objArr, page){
     let tempArr = objArr.slice((page*itemsPerPage)-itemsPerPage, page*itemsPerPage);
     return(tempArr);

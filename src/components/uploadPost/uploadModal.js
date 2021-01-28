@@ -21,7 +21,7 @@ const Upload = () => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  console.log(formItems);
+  // console.log(formItems);
   
   const handleChange = (e) => {
     let newItems = {
