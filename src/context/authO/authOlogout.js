@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import cookie from 'react-cookies';
+import './authButton.css';
 
 const LogoutButton = () => {
   const { logout } = useAuth0();
@@ -11,7 +12,7 @@ const LogoutButton = () => {
   }
 
   return (
-    <button class="ui button" onClick={handleLogOut}>
+    <button className="ui button customButton" onClick={handleLogOut}>
       Log Out
     </button>
   );
