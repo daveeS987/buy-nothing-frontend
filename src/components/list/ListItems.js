@@ -4,61 +4,93 @@ import {Grid, Pagination} from 'semantic-ui-react'
 
 import ListCard from './listcard.js'
 import {LoginContext} from '../../context/auth/context.js';
-import { Switch } from 'react-router-dom';
-
-
 
 function ListItems (props){
-
-  // const [currentCategory, setCurrentCategory] = useState();
 
   const userContext = useContext(LoginContext);
   let listings = useSelector(state => state.listings)
   let category = useSelector(state => state.category)
   let filteredList = [...listings];
 
-  console.log('line 20', category);
-
-  // useEffect(() => {
-  //   console.log('category got changed')
-  // }, [filteredList])
-
   if(category) {
 
     switch(category) {
 
       case 'myPost':
-        console.log('myPost got triggered')
         filteredList = listings.filter( list => {
           return list.creatorUserId === userContext.user.mongoId;
         })
         break;
 
       case 'clothes':
-        console.log('clothes got triggered')
         filteredList = listings.filter( list => {
           return list.categories === 'clothes';
         })
         break;
 
       case 'electronics':
-        console.log('electronics got triggered')
         filteredList = listings.filter( list => {
           return list.categories === 'electronics';
         })
         break;
 
       case 'furniture':
-        console.log('furniture got triggered')
         filteredList = listings.filter( list => {
           return list.categories === 'furniture';
         })
         break;
 
         case 'sports':
-          console.log('sports got triggered')
           filteredList = listings.filter( list => {
             return list.categories === 'sports';
+          })
+        break;
+
+        case 'books':
+          filteredList = listings.filter( list => {
+            return list.categories === 'books';
+          })
+        break;
+
+        case 'appliances':
+          filteredList = listings.filter( list => {
+            return list.categories === 'appliances';
+          })
+        break;
+
+        case 'general':
+          filteredList = listings.filter( list => {
+            return list.categories === 'general';
+          })
+        break;
+
+        case 'vehicles':
+          filteredList = listings.filter( list => {
+            return list.categories === 'vehicles';
+          })
+        break;
+
+        case 'household':
+          filteredList = listings.filter( list => {
+            return list.categories === 'household';
+          })
+        break;
+
+        case 'music':
+          filteredList = listings.filter( list => {
+            return list.categories === 'music';
+          })
+        break;
+
+        case 'tools':
+          filteredList = listings.filter( list => {
+            return list.categories === 'tools';
+          })
+        break;
+
+        case 'realestate':
+          filteredList = listings.filter( list => {
+            return list.categories === 'realestate';
           })
         break;
 
@@ -66,52 +98,6 @@ function ListItems (props){
         console.log('default got targeted');
     }
   }
-
-
-  // useEffect(() => {
-    
-  //   if(category) {
-
-  //     switch(category) {
-  
-  //       case 'myPost':
-  //         console.log('myPost got triggered')
-  //         filteredList = listings.filter( list => {
-  //           return list.creatorUserId === userContext.user.mongoId;
-  //         })
-  //         break;
-  
-  //       case 'clothes':
-  //         filteredList = listings.filter( list => {
-  //           return list.categories === 'clothes';
-  //         })
-  //         break;
-  
-  //       case 'electronics':
-  //         filteredList = listings.filter( list => {
-  //           return list.categories === 'electronics';
-  //         })
-  //         break;
-  
-  //       case 'furniture':
-  //         filteredList = listings.filter( list => {
-  //           return list.categories === 'furniture';
-  //         })
-  //         break;
-  
-  //         case 'sports':
-  //           console.log('sports got triggered')
-  //           filteredList = listings.filter( list => {
-  //             return list.categories === 'sports';
-  //           })
-  //         break;
-  
-  //       default:
-  //         console.log('default got targeted');
-  //     }
-  //   }
-  // }, [category])
-
 
 
   let itemsPerPage = 5;
@@ -125,11 +111,13 @@ function ListItems (props){
   useEffect ( () => {
     let initial = itemPagina(filteredList, page)
     setTempArray(initial);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[listings]);
 
   useEffect ( () => {
     let clickedPage = itemPagina(filteredList, page)
     setTempArray(clickedPage);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[page]);
 
   function itemPagina(objArr, page){

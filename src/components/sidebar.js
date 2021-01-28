@@ -1,4 +1,4 @@
-import { Icon, Menu, Sidebar, Segment} from 'semantic-ui-react'
+import { Icon, Menu, Sidebar } from 'semantic-ui-react'
 import { useDispatch } from 'react-redux';
 import { useAuth0 } from "@auth0/auth0-react";//
 import cookie from 'react-cookies';
@@ -29,10 +29,9 @@ const dispatch = useDispatch()
     dispatch(getListings())
   }
 
-
   return (
     <>
-      {/* <Sidebar.Pushable as={Segment}> */}
+
       <Sidebar
         as={Menu}
         icon='labeled'
@@ -55,7 +54,7 @@ const dispatch = useDispatch()
           Log Out
         </Menu.Item>
       </Sidebar>
-      {/* </Sidebar.Pushable> */}
+
     </>
   )
 

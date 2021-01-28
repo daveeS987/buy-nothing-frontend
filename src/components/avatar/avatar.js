@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'// bring this in
-import { Message, Card, Feed, Image, Grid, Row, Column, Input, Container } from 'semantic-ui-react'
+import { Image, Grid, Input, Container } from 'semantic-ui-react'
 import {  When } from 'react-if';
 
-import LogoutButton from '../../context/authO/authOlogout';// bring in
+// import LogoutButton from '../../context/authO/authOlogout';// bring in
 import LoginButton from '../../context/authO/authOlogin'
 
 import {LoginContext} from '../../context/auth/context.js';// bring in

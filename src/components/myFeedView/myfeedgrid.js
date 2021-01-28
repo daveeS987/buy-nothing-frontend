@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import {useDispatch} from 'react-redux';
-import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
-import { Grid, Button, Header, Icon, Message } from 'semantic-ui-react';
+import React from 'react';
+// import {useDispatch} from 'react-redux';
+import { If, Then, Else} from 'react-if';
+import { Grid, Message } from 'semantic-ui-react';
 import ListItems from '../list/ListItems.js';
 import { useAuth0 } from "@auth0/auth0-react";
 import UploadModal from '../uploadPost/uploadModal.js';
 
-import {changeCategory} from '../../store/category.js';
+// import {changeCategory} from '../../store/category.js';
 
 function MyFeedGrid() {
   
-  const dispatch = useDispatch()
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const [view, setView] = useState('myPost');
+  // const dispatch = useDispatch()
+  const { isAuthenticated } = useAuth0();
+  // const [view, setView] = useState('myPost');
 
   return (
     <>
@@ -26,19 +26,17 @@ function MyFeedGrid() {
           <Grid.Column></Grid.Column>
 
           <Grid.Column textAlign="center">
-            <Button basic color='teal' onClick={() => dispatch(changeCategory('myPost'))}>
+            {/* <Button basic color='teal' onClick={() => dispatch(changeCategory('myPost'))}>
               My Post
-            </Button>
+            </Button> */}
           </Grid.Column>
 
           <Grid.Column textAlign="center">
-            <Button basic color='teal' onClick={() => dispatch(changeCategory('default'))}>
-              All Items
-            </Button>
+          <UploadModal />
           </Grid.Column>
 
           <Grid.Column textAlign="center">
-            <UploadModal />
+
           </Grid.Column>
 
           <Grid.Column >
