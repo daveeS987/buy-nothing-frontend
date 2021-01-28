@@ -55,8 +55,8 @@ function ListItems (){
 
   return(
     <Grid>
-      <Grid.Row columns={1}>
-        <Grid.Column textAlign="center" width="12" style={{
+      <Grid.Row columns={2}>
+        <Grid.Column textAlign="center" style={{
           margin : "auto"
           }}verticalAlign>
 
