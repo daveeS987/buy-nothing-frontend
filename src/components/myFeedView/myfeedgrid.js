@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
+// import { If, Then, Else, When, Unless, Switch, Case, Default } from 'react-if';
 import { Grid, Button, Header, Icon } from 'semantic-ui-react';
 import ListItems from '../list/ListItems.js';
 
@@ -51,8 +51,6 @@ function MyFeedGrid() {
           </Grid.Column>
 
           <Grid.Column centered width={10}>
-
-
             <ListItems />
           </Grid.Column>
 
