@@ -1,6 +1,3 @@
-
-// import { useDispatch } from 'react-redux';
-
 const intialState = null;
 
 export default function reducer( state = intialState, action) {
@@ -18,7 +15,6 @@ export default function reducer( state = intialState, action) {
 
 
 export const changeCategory = (newCategory) => {
-  // console.log('Change category got triggered in actions:', newCategory);
   return {
     type: 'CHANGECATEGORY',
     payload: newCategory

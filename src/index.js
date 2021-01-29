@@ -5,9 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import { Auth0Provider } from "@auth0/auth0-react";
 
-console.log('redirect:', process.env.REACT_APP_REDIRECT)
-
-
 ReactDOM.render(
   <React.StrictMode>
       <Auth0Provider

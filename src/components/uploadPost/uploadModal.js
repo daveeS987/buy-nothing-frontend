@@ -22,8 +22,6 @@ const Upload = () => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  // console.log(formItems);
-  
   const handleChange = (e) => {
     let newItems = {
       ...formItems, 
@@ -33,23 +31,16 @@ const Upload = () => {
     setFormItems(newItems);
   }
 
-
   const uploadHandler = async (e) => {
     e.preventDefault();
-    console.log('this got triggered!');
 
     try {
       const formData = new FormData();
-      console.log('img line 41', imgData)
       formData.append("picture", imgData, imgData.name);
-      // formData.append("desc", description);
 
       let res = await axios.post('https://buynothingbackend.herokuapp.com/api/v1/imghandler/upload', formData);
 
-      console.log('res.data.createdImage.url:', res.data.createdImage.url)
       setFormItems({...formItems, imageUrl: res.data.createdImage.url})
-
-
       setError(false);
       setisUploaded(true);
     } catch (error) {
@@ -60,11 +51,9 @@ const Upload = () => {
 
   const preUploadImgHandler = async(e) => {
     setImgData(e.target.files[0])
-    console.log('img line 61', imgData)
     if(e.target.files && e.target.files[0]){
       let reader = new FileReader()
       reader.onload = (e) =>{
-        console.log({image: e.target.result})
       setImage(e.target.result)
     }
       reader.readAsDataURL(e.target.files[0]);
@@ -83,8 +72,6 @@ const Upload = () => {
       creatorUserId: userContext.user.mongoId,
       itemStatus: true,
     }
-    console.log('uercontext 84',userContext.user);
-    console.log('output line 84', output);
     dispatch(addListing(output));
     handleClose();
     setisUploaded(false)

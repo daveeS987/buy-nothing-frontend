@@ -27,7 +27,6 @@ function Main() {
 
   useEffect(() => {
     if(isAuthenticated) {
-      console.log('userContext.Login got triggered and will try to login')
       userContext.login(user.email, user.name, user.picture);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps

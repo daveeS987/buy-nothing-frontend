@@ -10,7 +10,6 @@ const Profile = () => {
   
   useEffect(() => {
     if(isAuthenticated) {
-      console.log('userContext.Login got triggered and will try to login')
       userContext.login(user.email, user.name, user.picture);
     }
   }, [isAuthenticated])
