@@ -16,11 +16,7 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 
 #
 
-## Architecture
 
-```
-
-```
 
 #
 
@@ -41,28 +37,32 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
 <img  align="left"alt="Semantic UI" width="26px" src="./icons/semantic.png"/>
 <img align="left" alt="Auth0" width="26px" src="./icons/auth0-logo.png">
-<img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"/>
-<img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"/>
-
+<img  align="left" alt="Jason Web Token" width="26px" src="./icons/jsonwebicon.png"/>
+<img  align="left" alt="MongoDb" width="26px" src="./icons/mongo.svg.png"/>
 <img  align="left" alt="Axios" width="26px" src="./icons/axiosimage.png"/>
+<img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"/>
 </br>
 </br>
 <pre>
-<b>Javascript ➡ React ➡  Auth0 ➡ Semantic Ui ➡ MongoDB </b>
+<b>Javascript ➡ React ➡  Auth0 ➡ Semantic Ui ➡ MongoDB ➡ JWT ➡ Axios ➡ Node.js</b>
 </pre>
 
 #
 
 ## Getting started
+1. Log on or create and account using your google account or email.
+1. On the main feed you'll find categories to choose from. Feel free to click on a category and start looking at posts!
+1. Click on details to know more about a post. You can also reply to a post to contact the owner of the item.
 
+## Posting 
+1. Click on post.
+1. Click on choose file and choose an image from your files to use as a visual for the item you are posting.
+1. Click on upload after you have chosen an image. This needs to be done to finalize the item for uploading.
+1. Fill in the input fields below to add title, location, description, etc.
+1. Hit submit and you're done!
 #
 
-## Buy Nothing
 
-```
-
-
-```
 
 # Our notes while developing
 
