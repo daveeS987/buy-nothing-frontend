@@ -71,6 +71,8 @@ https://buynothing-frontend.netlify.app/main
 ```
 During local production, .env file should have:
 REACT_APP_API=http://localhost:5000
+REACT_APP_SECRET= *****
+REACT_APP_REDIRECT=http://localhost:3000
 
 Switch >>>>>>>>>>>>
 
