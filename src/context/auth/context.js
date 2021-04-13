@@ -28,6 +28,7 @@ function LoginProvider(props) {
     const API = process.env.REACT_APP_API;
 
     try {
+      // sets a cookie so that we can stay logged in
       const response = await superagent
         .post(`${API}/authZero`)
         .send({ email: input1, name: input2, picture: input3 });
@@ -44,11 +45,9 @@ function LoginProvider(props) {
 
       if (tokenUser.username) {
         setIsLoggedIn(true);
+        setUser(tokenUser);
+        setUserName(tokenUser.username);
       }
-      setUser(tokenUser);
-      setUserName(tokenUser.username);
-      // set a cookie so that we can stay logged in
-      // Optionally, make it only last 1 hour or until you close
     } catch (e) {
       setIsLoggedIn(false);
       setUser({});
