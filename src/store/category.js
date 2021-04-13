@@ -1,11 +1,10 @@
 const intialState = null;
 
-export default function reducer( state = intialState, action) {
-  const {type, payload} = action;
+export default function reducer(state = intialState, action) {
+  const { type, payload } = action;
 
-  switch(type) {
-
-    case "CHANGECATEGORY":
+  switch (type) {
+    case 'CHANGECATEGORY':
       return payload;
 
     default:
@@ -13,17 +12,9 @@ export default function reducer( state = intialState, action) {
   }
 }
 
-
 export const changeCategory = (newCategory) => {
   return {
     type: 'CHANGECATEGORY',
-    payload: newCategory
-  }
-
-}
-
-
-
-
-
-
+    payload: newCategory,
+  };
+};

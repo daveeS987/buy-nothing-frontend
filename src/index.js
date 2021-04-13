@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
   <React.StrictMode>
-      <Auth0Provider
-        domain="davee1234.us.auth0.com"
-        clientId="ZH1REh7iBjpJQZAstfxzYBUQpGFEUIDF"
-        redirectUri={`${process.env.REACT_APP_REDIRECT}/main`}
-      >
+    <Auth0Provider
+      domain="davee1234.us.auth0.com"
+      clientId="ZH1REh7iBjpJQZAstfxzYBUQpGFEUIDF"
+      redirectUri={`${process.env.REACT_APP_REDIRECT}/main`}
+    >
       <App />
     </Auth0Provider>
   </React.StrictMode>,
