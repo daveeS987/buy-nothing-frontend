@@ -1,11 +1,10 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
 import { Grid } from 'semantic-ui-react';
 
-import ListItem from '../list/ListItems';
-import SearchComponent from './search.js';
+import ListItem from '../list/list';
+import Categories from '../categories/categories.js';
 
-function HomeGrid() {
+function PublicView() {
   return (
     <>
       <Grid>
@@ -15,7 +14,7 @@ function HomeGrid() {
 
         {/* CENTER COLUMN */}
         <Grid.Column centered width={7} style={{ height: '100%' }}>
-          <SearchComponent />
+          <Categories />
           <ListItem />
         </Grid.Column>
 
@@ -26,4 +25,4 @@ function HomeGrid() {
   );
 }
 
-export default HomeGrid;
+export default PublicView;

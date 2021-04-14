@@ -5,7 +5,7 @@ import axios from 'axios';
 import { If, Then, Else } from 'react-if';
 
 import { addListing } from '../../store/listings.js';
-import { LoginContext } from '../../context/auth/context.js';
+import { LoginContext } from '../../context/loginContext.js';
 
 const Upload = () => {
   const userContext = useContext(LoginContext);

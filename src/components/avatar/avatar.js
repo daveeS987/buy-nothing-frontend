@@ -3,7 +3,7 @@ import { Image, Grid, Input, Container } from 'semantic-ui-react';
 import { When } from 'react-if';
 
 import LoginButton from '../authZeroLoginButton/loginButton';
-import { LoginContext } from '../../context/auth/context.js';
+import { LoginContext } from '../../context/loginContext.js';
 
 function Avatar() {
   let userContext = useContext(LoginContext);

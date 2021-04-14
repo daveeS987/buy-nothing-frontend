@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Grid, Pagination } from 'semantic-ui-react';
 
 import ListCard from './listcard.js';
-import { LoginContext } from '../../context/auth/context.js';
+import { LoginContext } from '../../context/loginContext.js';
 
 function ListItems(props) {
   const userContext = useContext(LoginContext);

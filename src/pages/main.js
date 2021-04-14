@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { Switch, Case } from 'react-if';
 import { useAuth0 } from '@auth0/auth0-react';
 
-import { LoginContext } from '../context/auth/context.js';
+import { LoginContext } from '../context/loginContext.js';
 
 import Header from '../components/header/header.js';
 import SideBar from '../components/sidebar/sidebar.js';
-import HomeView from '../components/homeView/homegrid.js';
-import MyFeedView from '../components/myFeedView/myfeedgrid.js';
+import PublicView from '../components/publicView/publicView.js';
+import MyFeedView from '../components/myFeedView/myFeedView.js';
 
 import { getListings } from '../store/listings.js';
 
@@ -41,7 +41,7 @@ function Main() {
 
       <Switch>
         <Case condition={view === 'home'}>
-          <HomeView />
+          <PublicView />
         </Case>
 
         <Case condition={view === 'myFeed'}>
