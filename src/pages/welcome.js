@@ -1,4 +1,4 @@
-import LoginButton from '../context/authO/authOlogin.js';
+import LoginButton from '../components/authZeroLoginButton/loginButton.js';
 import { Grid } from 'semantic-ui-react';
 import LogoImage from '../components/logo/logo.js';
 
