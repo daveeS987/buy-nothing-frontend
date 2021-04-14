@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useAuth0 } from '@auth0/auth0-react'; //
 import cookie from 'react-cookies';
 
-import { changeCategory } from '../store/category.js';
-import { getListings } from '../store/listings.js';
+import { changeCategory } from '../../store/category.js';
+import { getListings } from '../../store/listings.js';
 
 export default function SidebarComponent(props) {
   const dispatch = useDispatch();

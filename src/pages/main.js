@@ -6,7 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { LoginContext } from '../context/auth/context.js';
 
 import Header from '../components/header/header.js';
-import SideBar from '../components/sidebar.js';
+import SideBar from '../components/sidebar/sidebar.js';
 import HomeView from '../components/homeView/homegrid.js';
 import MyFeedView from '../components/myFeedView/myfeedgrid.js';
 
