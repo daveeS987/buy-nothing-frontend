@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Image, Grid, Input, Container } from 'semantic-ui-react';
 import { When } from 'react-if';
 
-import LoginButton from '../../context/authO/authOlogin';
+import LoginButton from '../authZeroLoginButton/loginButton';
 import { LoginContext } from '../../context/auth/context.js';
 
 function Avatar() {

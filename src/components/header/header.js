@@ -1,6 +1,6 @@
 import { Header, Grid } from 'semantic-ui-react';
-import Avatar from '../components/avatar/avatar.js';
-import LogoImage from './logo/logo.js';
+import Avatar from '../avatar/avatar.js';
+import LogoImage from '../logo/logo.js';
 import './header.css';
 
 export default function HeaderComponent() {
