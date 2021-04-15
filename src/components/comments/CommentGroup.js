@@ -5,8 +5,8 @@ import { Button, Comment, Form, Header } from 'semantic-ui-react';
 
 import ListingComment from './Comment.js';
 
-import { addComment } from '../../../store/listings.js';
-import { LoginContext } from '../../../context/auth/context.js';
+import { addComment } from '../../store/listings.js';
+import { LoginContext } from '../../context/loginContext.js';
 
 function CommentGroup(props) {
   const dispatch = useDispatch();

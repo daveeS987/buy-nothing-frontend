@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { If, Then, Else } from 'react-if';
 import { Grid, Message } from 'semantic-ui-react';
-import ListItems from '../list/ListItems.js';
-import UploadModal from '../uploadPost/uploadModal.js';
+import List from '../list/list.js';
+import UploadModal from '../uploadModal/uploadModal.js';
 
-import { LoginContext } from '../../context/auth/context.js';
+import { LoginContext } from '../../context/loginContext.js';
 
 function MyFeedGrid() {
   let userContext = useContext(LoginContext);
@@ -18,11 +18,7 @@ function MyFeedGrid() {
               <Grid.Row></Grid.Row>
               <Grid.Column></Grid.Column>
 
-              <Grid.Column textAlign="center">
-                {/* <Button basic color='teal' onClick={() => dispatch(changeCategory('myPost'))}>
-              My Post
-            </Button> */}
-              </Grid.Column>
+              <Grid.Column textAlign="center"></Grid.Column>
 
               <Grid.Column textAlign="center">
                 <UploadModal />
@@ -56,16 +52,7 @@ function MyFeedGrid() {
           <Grid.Column width={3}></Grid.Column>
 
           <Grid.Column centered width={10}>
-            {/* <If condition={view==='myPost'}>
-              <Then> */}
-            <ListItems filterBy={'myPost'} />
-            {/* </Then>
-              <Else>
-                <ListItems/>
-              </Else>
-            </If> */}
-
-            {/* <ListItems /> */}
+            <List filterBy={'myPost'} />
           </Grid.Column>
 
           <Grid.Column width={3}></Grid.Column>
