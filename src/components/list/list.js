@@ -96,22 +96,21 @@ function ListItems(props) {
     }
   }
 
-  let itemsPerPage = 5;
-
   // *************** Pagination Logic ********************//
   //************this is horrible hot garbage**************//
+  let itemsPerPage = 5;
   const [page, setPage] = useState(1);
-  const [pageArray, setTempArray] = useState([]);
+  const [pageArray, setPageArray] = useState([]);
 
   useEffect(() => {
     let initial = itemPagina(filteredList, page);
-    setTempArray(initial);
+    setPageArray(initial);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listings]);
 
   useEffect(() => {
     let clickedPage = itemPagina(filteredList, page);
-    setTempArray(clickedPage);
+    setPageArray(clickedPage);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 

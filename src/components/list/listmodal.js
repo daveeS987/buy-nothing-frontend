@@ -8,7 +8,7 @@ import {
   Header,
   Message,
 } from 'semantic-ui-react';
-import ListingCommentGroup from './semanticComponents/CommentGroup.js';
+import ListingCommentGroup from '../comments/CommentGroup.js';
 
 const ListModal = (props) => {
   const [open, setOpen] = React.useState(false);

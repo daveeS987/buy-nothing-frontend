@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { If, Then, Else } from 'react-if';
 import { Grid, Message } from 'semantic-ui-react';
-import ListItems from '../list/list.js';
-import UploadModal from '../uploadPost/uploadModal.js';
+import List from '../list/list.js';
+import UploadModal from '../uploadModal/uploadModal.js';
 
 import { LoginContext } from '../../context/loginContext.js';
 
@@ -52,7 +52,7 @@ function MyFeedGrid() {
           <Grid.Column width={3}></Grid.Column>
 
           <Grid.Column centered width={10}>
-            <ListItems filterBy={'myPost'} />
+            <List filterBy={'myPost'} />
           </Grid.Column>
 
           <Grid.Column width={3}></Grid.Column>
