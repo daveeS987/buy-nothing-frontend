@@ -1,6 +1,6 @@
-import { Header, Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import Avatar from '../avatar/avatar.js';
-import LogoImage from '../logo/logo.js';
+import Logo from '../logo/logo.js';
 import './header.css';
 
 export default function HeaderComponent() {
@@ -8,31 +8,22 @@ export default function HeaderComponent() {
     <Grid columns={5}>
       <Grid.Row style={{ height: '150%', display: 'block', padding: '1em' }}>
         {/* COLUMN ONE */}
-        <Grid.Column>{/* divs for seeing the grid */}</Grid.Column>
+        <Grid.Column></Grid.Column>
 
         {/* COLUMN TWO */}
-        <Grid.Column>
-          {/* <Header as='h2' icon textAlign='center'>
-
-        </Header> */}
-        </Grid.Column>
+        <Grid.Column></Grid.Column>
 
         {/* COLUMN THREE */}
         <Grid.Column style={{ height: '150%' }}>
-          <LogoImage />
-
-          {/* <Image src='logo/BNLogo3.svg' fluid /> */}
+          <Logo />
         </Grid.Column>
 
         {/* COLUMN FOUR */}
-        <Grid.Column>
-          <Header as="h2" icon textAlign="center"></Header>
-        </Grid.Column>
+        <Grid.Column></Grid.Column>
 
         {/* COLUMN FIVE */}
         <Grid.Column>
           <Avatar />
-          {/* <Login /> */}
         </Grid.Column>
       </Grid.Row>
     </Grid>
