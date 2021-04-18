@@ -8,8 +8,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="davee1234.us.auth0.com"
-      clientId="ZH1REh7iBjpJQZAstfxzYBUQpGFEUIDF"
+      domain={`${process.env.REACT_APP_AUTHZERO_DOMAIN}`}
+      clientId={`${process.env.REACT_APP_AUTHZERO_CLIENTID}`}
       redirectUri={`${process.env.REACT_APP_REDIRECT}/main`}
     >
       <App />
