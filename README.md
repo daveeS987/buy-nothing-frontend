@@ -5,6 +5,7 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 **Contributors**: Davee Sok, Ryan Geddes, Sarah Shatto, Jonathon Lee.
 
 **Version**: 1.0.0
+<br>
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
 
 ## Links and Resources
