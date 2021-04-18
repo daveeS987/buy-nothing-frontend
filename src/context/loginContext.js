@@ -3,6 +3,7 @@ import superagent from 'superagent';
 import jwt from 'jsonwebtoken';
 import cookie from 'react-cookies';
 
+const API = process.env.REACT_APP_API;
 export const LoginContext = React.createContext();
 
 function LoginProvider(props) {
@@ -25,8 +26,6 @@ function LoginProvider(props) {
   */
 
   const login = async (input1, input2, input3) => {
-    const API = process.env.REACT_APP_API;
-
     try {
       // sets a cookie so that we can stay logged in
       const response = await superagent

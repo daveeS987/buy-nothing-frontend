@@ -6,6 +6,7 @@ import { If, Then, Else } from 'react-if';
 
 import { addListing } from '../../store/listings.js';
 import { LoginContext } from '../../context/loginContext.js';
+const API = process.env.REACT_APP_API;
 
 const Upload = () => {
   const userContext = useContext(LoginContext);
@@ -35,10 +36,7 @@ const Upload = () => {
       const formData = new FormData();
       formData.append('picture', imgData, imgData.name);
 
-      let res = await axios.post(
-        'https://buynothingbackend.herokuapp.com/api/v1/imghandler/upload',
-        formData
-      );
+      let res = await axios.post(`${API}/api/v1/imghandler/upload`, formData);
 
       setFormItems({ ...formItems, imageUrl: res.data.createdImage.url });
       setError(false);
