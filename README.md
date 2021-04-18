@@ -2,7 +2,11 @@
 
 Inspired by Buy Nothing,This is A web application for giving things away for free or finding things for free.
 
-https://buynothing-frontend.netlify.app/main
+## Links and Resources
+
+- [Front-End Application](https://buynothing-frontend.netlify.app/main)
+- [Back-End Repository](https://github.com/daveeS987/buy-nothing-backend)
+- [Back-End Server Url](https://buynothingbackend.herokuapp.com/)
 
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
 
@@ -12,9 +16,10 @@ https://buynothing-frontend.netlify.app/main
 
 ## Project Overview
 
-- A user can sign in or continue as guest.
-- Upon sign up a user can upload a profile picture.
-- Upon sign up or login a user can reply to a post or create a post.
+- Users can sign in or continue as guest.
+- Users can upload a post with an image, description, category.
+- Users can perform crud operations with their own posts.
+- Users can post comments on their own post as well as other users posts.
 
 #
 
@@ -45,12 +50,12 @@ https://buynothing-frontend.netlify.app/main
 <img align="left" alt="Auth0" width="26px" src="./icons/auth0-logo.png">
 <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"/>
 <img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"/>
-
 <img  align="left" alt="Axios" width="26px" src="./icons/axiosimage.png"/>
+
 </br>
 </br>
 <pre>
-<b>Javascript ➡ React ➡  Auth0 ➡ Semantic Ui ➡ MongoDB </b>
+<b>Javascript ➡ React ➡  Auth0 ➡ Semantic Ui ➡ MongoDB ➡ Cloudify </b>
 </pre>
 
 #
