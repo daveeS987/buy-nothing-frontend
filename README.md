@@ -2,17 +2,16 @@
 
 Inspired by Buy Nothing,This is A web application for giving things away for free or finding things for free.
 
+**Contributors**: Davee Sok, Ryan Geddes, Sarah Shatto, Jonathon Lee.
+
+**Version**: 1.0.0
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
+
 ## Links and Resources
 
 - [Front-End Website](https://buynothing-frontend.netlify.app/main)
 - [Back-End Repository](https://github.com/daveeS987/buy-nothing-backend)
 - [Back-End Server Url](https://buynothingbackend.herokuapp.com/)
-
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
-
-**Contributors**: Davee Sok, Ryan Geddes, Sarah Shatto, Jonathon Lee.
-
-**Version**: 1.0.0
 
 ## Project Overview
 
@@ -21,13 +20,11 @@ Inspired by Buy Nothing,This is A web application for giving things away for fre
 - Users can perform crud operations with their own posts.
 - Users can post comments on their own post as well as other users posts.
 
-#
-
 ## Architecture
 
-The front end uses a React Framework with Semantic UI Components. Authentication and Authorization is handled by Auth0. The backend uses Node and Express to persist to a Mongo Database. Actual Images are stored in Cloudinary which creates an image url to be stored in our Mongo Database.
-
-#
+- The front end uses a React Framework with Semantic UI Components.
+- Authentication and Authorization is handled by Auth0. - The backend uses Node and Express to persist to a Mongo Database.
+- Actual Images are stored in Cloudinary which creates an image url to be stored in our Mongo Database.
 
 ## Page Wire Frames
 
@@ -37,8 +34,6 @@ The front end uses a React Framework with Semantic UI Components. Authentication
 - [Item Details 2](./assets/wireframe/2.75_ItemDetailsSelectUser.pdf)
 - [My Feed](./assets/wireframe/3_MyFeed.pdf)
 - [Create Post](./assets/wireframe/createPost.pdf)
-
-#
 
 ## Dependencies and Tools
 
@@ -58,18 +53,9 @@ The front end uses a React Framework with Semantic UI Components. Authentication
 
 </pre>
 
-#
-
 ## Getting started
 
 #
-
-## Buy Nothing
-
-```
-
-
-```
 
 # Our notes while developing
 
