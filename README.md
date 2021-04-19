@@ -1,4 +1,4 @@
-# Buy Nothing
+# Buy Nothing Front End
 
 Inspired by Buy Nothing. This is A web application for giving things away for free or finding things for free.
 
