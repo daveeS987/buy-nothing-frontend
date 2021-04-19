@@ -54,6 +54,7 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 <img  align="left" alt="Cloudinary" width="26px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcloudinary-res.cloudinary.com%2Fimage%2Fupload%2Fc_scale%2Cfl_attachment%2Cw_500%2Fv1%2Flogo%2Ffor_white_bg%2Fcloudinary_icon_for_white_bg.png&f=1&nofb=1"/>
 
 </br>
+<br>
 <pre>
 <b>Javascript ➡ React ➡ Semantic Ui ➡ NodeJS ➡ MongoDB ➡ Auth0 ➡ Axios ➡ Cloudinary </b>
 </pre>
