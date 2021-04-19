@@ -8,7 +8,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 <br>
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
 
-<br>
 
 ## Links and Resources
 
@@ -16,7 +15,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 - [Back-End Repository](https://github.com/daveeS987/buy-nothing-backend)
 - [Back-End Server Url](https://buynothingbackend.herokuapp.com/)
 
-<br>
 
 ## Project Overview
 
@@ -25,7 +23,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 - Users can perform crud operations with their own posts.
 - Users can post comments on their own post as well as other users posts.
 
-<br>
 
 ## Architecture
 
@@ -34,7 +31,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 - The backend uses Node and Express to persist to a Mongo Database.
 - Actual Images are stored in Cloudinary which creates an image url to be stored in our Mongo Database.
 
-<br>
 
 ## Page Wire Frames
 
@@ -45,7 +41,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 - [My Feed](./assets/wireframe/3_MyFeed.pdf)
 - [Create Post](./assets/wireframe/createPost.pdf)
 
-<br>
 
 ## Dependencies and Tools
 
@@ -59,12 +54,10 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 <img  align="left" alt="Cloudinary" width="26px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcloudinary-res.cloudinary.com%2Fimage%2Fupload%2Fc_scale%2Cfl_attachment%2Cw_500%2Fv1%2Flogo%2Ffor_white_bg%2Fcloudinary_icon_for_white_bg.png&f=1&nofb=1"/>
 
 </br>
-</br>
 <pre>
 <b>Javascript ➡ React ➡ Semantic Ui ➡ NodeJS ➡ MongoDB ➡ Auth0 ➡ Axios ➡ Cloudinary </b>
 </pre>
 
-<br>
 
 ## Getting started
 
@@ -87,7 +80,6 @@ REACT_APP_AUTHZERO_CLIENTID=**get from Auth0 website**
 - Start backend server: `nodemon index.js`
 - Start front end: `npm start`
 
-<br>
 
 ## Notes while developing
 
