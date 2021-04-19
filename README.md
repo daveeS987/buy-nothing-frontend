@@ -4,17 +4,13 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 
 **Contributors**: Davee Sok, Ryan Geddes, Sarah Shatto, Jonathon Lee.
 
-**Version**: 1.0.0
-<br>
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/jonnyleealas/ohnologger)
-
+![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
 
 ## Links and Resources
 
 - [Front-End Website](https://buynothing-frontend.netlify.app/main)
 - [Back-End Repository](https://github.com/daveeS987/buy-nothing-backend)
 - [Back-End Server Url](https://buynothingbackend.herokuapp.com/)
-
 
 ## Project Overview
 
@@ -23,14 +19,13 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 - Users can perform crud operations with their own posts.
 - Users can post comments on their own post as well as other users posts.
 
-
 ## Architecture
 
 - The front end uses a React Framework with Semantic UI Components.
+- Axios is used to make calls to the backend
 - Authentication and Authorization is handled by Auth0.
 - The backend uses Node and Express to persist to a Mongo Database.
 - Actual Images are stored in Cloudinary which creates an image url to be stored in our Mongo Database.
-
 
 ## Page Wire Frames
 
@@ -40,7 +35,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 - [Item Details 2](./assets/wireframe/2.75_ItemDetailsSelectUser.pdf)
 - [My Feed](./assets/wireframe/3_MyFeed.pdf)
 - [Create Post](./assets/wireframe/createPost.pdf)
-
 
 ## Dependencies and Tools
 
@@ -58,7 +52,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 <pre>
 <b>Javascript ➡ React ➡ Semantic Ui ➡ NodeJS ➡ MongoDB ➡ Auth0 ➡ Axios ➡ Cloudinary </b>
 </pre>
-
 
 ## Getting started
 
@@ -80,7 +73,6 @@ REACT_APP_AUTHZERO_CLIENTID=**get from Auth0 website**
 - Clone down back-end repo and install dependencies: [Back-End Repository](https://github.com/daveeS987/buy-nothing-backend)
 - Start backend server: `nodemon index.js`
 - Start front end: `npm start`
-
 
 ## Notes while developing
 
