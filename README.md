@@ -71,7 +71,7 @@ REACT_APP_AUTHZERO_CLIENTID=**get from Auth0 website**
 - Start backend server: `nodemon index.js`
 - Start front end: `npm start`
 
-## Notes while developing
+### Our personal notes notes while developing
 
 ```
 During local production, .env file should have:
