@@ -42,7 +42,6 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
 <img  align="left"alt="Semantic UI" width="26px" src="./icons/semantic.png"/>
 <img align="left" alt="Auth0" width="26px" src="./icons/auth0-logo.png">
-<img  align="left" alt="Axios" width="26px" src="./icons/axiosimage.png"/>
 
 </br>
 <br>
