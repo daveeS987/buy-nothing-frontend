@@ -5,6 +5,7 @@ Inspired by Buy Nothing. This is A web application for giving things away for fr
 **Contributors**: Davee Sok, Ryan Geddes, Sarah Shatto, Jonathon Lee.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f704e36c-6738-4296-918c-22c0db9e7de3/deploy-status)](https://app.netlify.com/sites/buynothing-frontend/deploys)
 
 ## Links and Resources
 
