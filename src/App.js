@@ -12,12 +12,12 @@ function App() {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route exact path="/main">
-              <Main />
-            </Route>
-
             <Route exact path="/">
               <Welcome />
+            </Route>
+
+            <Route exact path="/main">
+              <Main />
             </Route>
           </Switch>
         </Router>

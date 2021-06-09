@@ -6,7 +6,7 @@ import './header.css';
 export default function HeaderComponent() {
   return (
     <Grid columns={5}>
-      <Grid.Row style={{ height: '150%', display: 'block', padding: '1em' }}>
+      <Grid.Row style={{ height: '100%', display: 'block', padding: '1em' }}>
         {/* COLUMN ONE */}
         <Grid.Column></Grid.Column>
 
@@ -14,7 +14,7 @@ export default function HeaderComponent() {
         <Grid.Column></Grid.Column>
 
         {/* COLUMN THREE */}
-        <Grid.Column style={{ height: '150%' }}>
+        <Grid.Column>
           <Logo />
         </Grid.Column>
 

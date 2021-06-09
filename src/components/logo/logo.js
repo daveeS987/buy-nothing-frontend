@@ -7,9 +7,8 @@ function Logo() {
     <img
       src={logo}
       className="logoimage"
-      width="150vw"
       alt="Logo"
-      style={{ maxWidth: '300%', width: '150%' }}
+      style={{ maxWidth: '300%', width: '100%' }}
     />
   );
 }
